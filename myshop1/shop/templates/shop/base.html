@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}MERYKSHOP{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <a href="/" class="logo">MERYKSHOP</a>
+    </div>
+    <div id="subheader">
+      <div class="cart">
+        {% with total_items=cart|length %}
+          {% if total_items > 0 %}
+          <div>KOSZYK</div>
+            <a href="{% url "cart:cart_detail" %}">
+             ilość produktów = {{ total_items }} {{ total_items|pluralize }}
+             <div id="total">DO ZAPŁATY {{ cart.get_total_price }} zł + DOSTAWA</div>
+            </a>
+          {% else %}
+            Twój koszyk jest pusty.
+          {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

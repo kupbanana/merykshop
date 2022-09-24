@@ -1,0 +1,48 @@
+{% extends "sklep/base.html" %}
+{% load static %}
+
+{% block title %}
+  {{ produkt.nazwa }}
+{% endblock %}
+
+{% block content %}
+    <div class="szczegoly-produktu">
+        <div class="sidebar" id="sidebar">
+      <h3 class = "nagnav">Kategorie</h3>
+        <ul>
+          <li {% if not kategoria %}class="selected"{% endif %}>
+            <a href="{% url "sklep:lista_produktow" %}">Wszystkie</a>
+          </li>
+          {% for c in kategorie %}
+            <li {% if kategoria.skrot_url == c.skrot_url %}class="selected"{% endif %}>
+              <a href="{{ c.get_absolute_url }}">{{ c.nazwa }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        </div>
+        <div class="item">
+            <div>
+                <h1>{{ produkt.nazwa }}</h1>
+                <img src="{% if produkt.zdjecie %}{{ produkt.zdjecie.url}}" width="150" height="150" 
+                {% else %}{% static "img/no_image.png" width="150" height="150" %}{% endif %}">
+                <h2>
+                  <a href="{{ produkt.kategoria.get_absolute_url }}">
+                      Kategoria: {{ produkt.kategoria }}
+                  </a>
+               </h2>
+               <p class="price">Cena: {{ produkt.cena }} zł</p>
+               <form action="{% url "koszyk:koszyk_dodaj" produkt.id %}" method="post">
+                  {{ formularz_dodaj_do_koszyka }}
+                  {% csrf_token %}
+                  <input type="submit" value="Dodaj do koszyka">
+              </form>
+            </div>  
+            <div class="opis-produktu-tytul"><p>OPIS PRODUKTU</p></div>
+              <div class="opis-produktu">
+                  <div>
+                  {{ produkt.opis|linebreaks }}
+                  </div>
+             </div>
+         </div>
+    </div>    
+{% endblock %}

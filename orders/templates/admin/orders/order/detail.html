@@ -1,0 +1,78 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}
+  Zamówienie {{ order.id }} {{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url "admin:index" %}">Strona główna</a> &rsaquo;
+    <a href="{% url "admin:orders_order_changelist" %}">Zamówienia</a>
+    &rsaquo;
+    <a href="{% url "admin:orders_order_change" order.id %}">Zamówienie {{ order.id }}</a>
+    &rsaquo; Detail
+  </div>
+{% endblock %}
+
+{% block content %}
+<h1>Zamówienie {{ order.id }}</h1>
+<ul class="object-tools">
+  <li>
+    <a href="#" onclick="window.print();">Drukuj zamówienie</a>
+  </li>
+</ul>
+<table>
+  <tr>
+    <th>Utworzono</th>
+    <td>{{ order.created }}</td>
+  </tr>
+  <tr>
+    <th>Klient</th>
+    <td>{{ order.first_name }} {{ order.last_name }}</td>
+  </tr>
+  <tr>
+    <th>E-mail</th>
+    <td><a href="mailto:{{ order.email }}">{{ order.email }}</a></td>
+  </tr>
+  <tr>
+    <th>Adres</th>
+    <td>{{ order.address }}, {{ order.postal_code }} {{ order.city }}</td>
+  </tr>
+  <tr>
+    <th>Łączna kwota</th>
+    <td>${{ order.get_total_cost }}</td>
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td>{% if order.paid %}Zapłacono{% else %}Oczekuje na zapłatę{% endif %}</td>
+  </tr>
+</table>
+
+<div class="module">
+  <h2>Zakupione towary</h2>
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <th>Produkt</th>
+        <th>Cena</th>
+        <th>Ilość</th>
+        <th>Razem</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in order.items.all %}
+        <tr class="row{% cycle "1" "2" %}">
+          <td>{{ item.Produkt.name }}</td>
+          <td class="num">${{ item.price }}</td>
+          <td class="num">{{ item.quantity }}</td>
+          <td class="num">${{ item.get_cost }}</td>
+        </tr>
+      {% endfor %}
+      <tr class="total">
+        <td colspan="3">Razem</td>
+        <td class="num">${{ order.get_total_cost }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

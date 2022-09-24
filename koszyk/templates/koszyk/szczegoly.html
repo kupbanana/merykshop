@@ -1,0 +1,65 @@
+{% extends "sklep/base.html" %}
+{% load static %}
+
+{% block title %}
+  Koszyk na zakupy
+{% endblock %}
+
+{% block content %}
+  <h1>Koszyk na zakupy</h1>
+  <table class="koszyk">
+    <thead>
+      <tr>
+        <th>Zdjęcie</th>
+        <th>Produkt</th>
+        <th>Ilość</th>
+        <th>Usuń</th>
+        <th>Cena jednostkowa</th>
+        <th>Cena</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for towar in koszyk %}
+        {% with produkt=towar.produkt %}
+          <tr>
+            <td>
+              <a href="{{ produkt.get_absolute_url }}">
+                <img src="{% if produkt.zdjecie %}{{ produkt.zdjecie.url}}"  
+                {% else %}{% static "img/no_image.png"  %}{% endif %}">
+              </a>
+            </td>
+            <td>{{ produkt.nazwa }}</td>
+            <td>
+              <form action="{% url "koszyk:koszyk_dodaj" produkt.id %}" method="post">
+                {{ towar.uaktualnij_formularz_ilosc.ilosc }}
+                {{ towar.uaktualnij_formularz_ilosc.nadpisz }}
+                <input type="submit" value="Uaktualnij">
+                {% csrf_token %}
+              </form>
+            </td>
+            <td>
+              <form action="{% url "koszyk:koszyk_usun" produkt.id %}" method="post">
+                <input type="submit" value="Usuń">
+                {% csrf_token %}
+              </form>
+            </td>
+            <td class="num">{{ towar.cena }} zł </td>
+            <td class="num">{{ towar.cena_razem }} zł</td>
+          </tr>
+        {% endwith %}
+      {% endfor %}
+      <tr class="total">
+        <td>Razem</td>
+        <td colspan="4"></td>
+        <td class="num">{{ koszyk.oblicz_laczna_cene }} zł</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-right">
+    <a href="{% url "sklep:lista_produktow" %}" class="button
+    light">Kontynuuj zakupy</a>
+    <a href="{% url "orders:order_create" %}" class="button">
+      Do kasy
+    </a>
+  </p>
+{% endblock %}

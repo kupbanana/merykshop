@@ -1,0 +1,451 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+html {
+   height:100%;
+
+}
+body {
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif;
+    height:100%;
+
+}
+
+
+h1, h2, h3, h4, h5 , h6 {
+    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+}
+
+a {
+    text-decoration:none;
+    color:#9f6428;
+}
+
+.logo {
+    margin:auto;
+    background-image: linear-gradient(to right, black,grey);
+
+}
+
+.logo-graphic {
+    float:left;
+    width:20%;
+}
+
+.tytul-sklepu
+{
+    float:left;
+    width:80%;
+}
+
+a.duzy {
+    font-size: 4.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    background: linear-gradient(to right, #9f6428,#ead487, #9f6428);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3.nagnav {
+    font-size: 1.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color:rgb(7, 51, 7)
+}
+
+.absolute-center {
+
+    text-align: center;
+}
+
+a:hover {
+    color:black;
+}
+.sidebar {
+    background-color: grey;
+}
+
+a.button, input[type="submit"] {
+    color:#fff;
+    background:#9f6428;
+    border-radius:4px;
+    padding:10px 20px;
+    font-size:14px;
+    border:0;
+}
+
+a.button.light {
+    color:#666;
+    background:#ededed;
+}
+
+.text-left {
+    text-align:left;
+}
+
+.text-right {
+    text-align:right;
+}
+
+table {
+    width:100%;
+    border-spacing:0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    text-align:left;
+    font-size:14px;
+    padding:10px;
+    margin:0;
+}
+
+tbody tr:nth-child(odd) {
+    background:#efefef;
+}
+
+tbody tr.subtotal {
+    background:#ccc;
+}
+
+thead th, tbody tr.total {
+    background:#9f6428;
+    color:#fff;
+    font-weight:bold;
+}
+
+table.koszyk {
+    margin-bottom:40px;
+}
+
+table.koszyk img {
+    width:180px;
+}
+
+tbody td.num {
+    text-align:right;
+}
+
+td input[type="submit"] {
+    font-size:12px;
+    padding:4px 10px;
+}
+
+form p label, form p input {
+    float:left;
+    font-size: 14px;
+    font-weight: bold;
+    clear:both;
+}
+
+label {
+    font-size:14px;
+    padding-bottom:4px;
+    font-weight:bold;
+}
+
+form p input {
+    width:300px;
+    font-size:13px;
+    margin-bottom:10px;
+    padding:10px 12px;
+    border:0;
+    background:#efefef;
+    color:#666;
+    border-radius:4px;
+}
+
+ul.errorlist {
+   float:left;
+   color:#ff0000;
+   clear:both;
+   font-size:13px;
+   margin:0;
+   padding:0;
+}
+
+
+#header {
+    padding:10px 100px;
+    font-size:18px;
+    overflow:auto;
+}
+
+#subheader {
+    background: rgb(59, 57, 57);
+    color:black;
+    padding:15px 100px;
+
+    overflow:auto;
+}
+
+#header .logo {
+    font-family: 'Ubuntu', sans-serif;
+    float:left;
+    color:#333;
+    font-size:22px;
+    margin-right:10%;
+}
+
+#subheader .koszyk {
+    float:right;
+    padding-top:4px;
+}
+
+.content {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+
+    #sidebar {
+        float: left;
+        height:100%;
+        padding:30px 20px 0 0;
+    }
+
+#sidebar ul{
+    margin:0;
+    padding:0;
+}
+
+#sidebar ul li {
+    margin:0;
+    list-style:none;
+    padding:10px 14px;
+}
+
+#sidebar ul li a {
+    display:block;
+}
+
+#sidebar ul li.selected {
+    background:#9f6428;
+    border-radius:4px;
+}
+
+#sidebar ul li.selected a {
+    color:#fff;
+}
+
+#main {
+    float:left;
+    width: 96%;
+    margin-right:-220px;
+    overflow:hidden;
+}
+
+/* ------------------------------------------------  LISTA PRODUKTÓW ---------------------------------------------------
+/* lista produktów
+   grid : 3 kolumny z odstępem pomiędzy nimi
+   produkty wyświetlane w cieniowanych ramkach
+
+*/
+
+.lista-produktow {
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 3em;
+   width: 80%;
+   margin: 0 auto;
+
+}
+
+.lista-produktow .item {
+   background-color: #f2f2f2;
+   padding: 18px;
+   box-shadow: 0px 0px 10px #000;
+}
+
+.lista-produktow .item img {
+    width:200px;
+    height:auto;
+}
+
+/* ------------------------------------------------ SZCZEGÓŁY PRODUKTU ---------------------------------------------------
+/* szczegóły produktu
+   wyjustowany tekst
+
+*/
+
+.szczegoly-produktu {
+    display: grid;
+    box-shadow: 0px 0px 10px #000;
+    height: 95%;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.szczegoly-produktu .price {
+    color:#333;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.szczegoly-produktu img {
+    float:left;
+    width:250px;
+    height:auto;
+}
+
+.szczegoly-produktu h1 {
+    margin-bottom:10;
+}
+
+.opis-produktu {
+    padding:12px, 12px, 12px, 12px;
+    width:95%;
+    text-align:justify;
+    height:auto;
+    margin: 0 auto;
+    box-shadow: 0px 0px 2px #000;
+}
+
+.opis-produktu-tytul {
+    margin: 12px;
+    font-size: 28px;
+    font-weight: bold;
+}
+.szczegoly-produktu h2 {
+    margin-top:10px;
+}
+
+/* formularz zamówienia
+
+*/
+
+.order-form {
+    float:left;
+}
+
+.order-info {
+    float:right;
+    width:300px;
+    background:#efefef;
+    padding:10px 20px;
+    color:#333;
+    border-bottom:4px solid #5993bb;
+}
+
+.order-info h3 {
+    color:#9f6428;
+}
+
+.order-info ul li {
+    margin:0;
+    padding:0;
+    font-size:14px;
+}
+
+.order-info p {
+    font-weight:bold;
+    float:right;
+}
+
+.order-info span {
+    float:right;
+}
+
+.neg {
+    color:#dc1616;
+}
+
+.languages {
+   float:right;
+   padding-top:4px;
+   font-size:14px;
+}
+
+.languages ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    float:left;
+}
+
+.languages ul li {
+    float:left;
+    margin:0 0 0 10px;
+    font-size:14px;
+}
+
+.languages p {
+    float:left;
+    margin:0;
+}
+
+.recommendations {
+    clear:both;
+}
+
+.recommendations div {
+    float:left;
+}
+
+.recommendations img {
+    width:200px
+}
+
+.recommendations p {
+    clear:both;
+}
+
+.recommendations.koszyk {
+    width:60%;
+    float:left;
+    overflow:auto;
+}
+
+.recommendations.koszyk h3 {
+    margin-top:0;
+}
+
+.recommendations.koszyk .item {
+    margin-right:10px;
+}
+
+.recommendations.koszyk img {
+    width:120px;
+}
+
+.dwie-kolumny {
+    display: grid;
+    vertical-align:middle;
+    text-align:center;
+    background-image: linear-gradient(to right, black,grey);
+    grid-template-columns: 430px 2fr;
+
+}
+
+.dwie-kolumny > p {
+    height:100%;
+    background: linear-gradient(to right, black,grey);
+
+}
+
+.prawa {
+
+    font-size: 4.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    background: linear-gradient(to right, #9f6428,#ead487, #9f6428);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.dwie-kolumny-tresc {
+    display: grid;
+    grid-template-columns: 430px 2fr;
+    grid-gap:2em;
+
+}
+
+
+

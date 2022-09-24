@@ -1,0 +1,66 @@
+{% extends "sklep/base.html" %}
+{% load static %}
+
+{% block title %}
+{% if szukane %} Artykuły zawierające słowo: {{szukane}} 
+{% else %} 
+    {% if kategoria %}
+        {{ kategoria.nazwa }}
+    {% else %}
+        Produkty
+    {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<div>
+  <h3>
+  {% if szukane %}
+    {% with razem_towarow=produkty|length %} 
+        {% if razem_towarow > 0  %} 
+            Znaleziono {{razem_towarow}} artykułów zawierających słowo: {{szukane}}
+        {% else %}
+            Nie znaleziono artykułów zawierających słowo: {{szukane}}
+        {% endif %}
+     {% endwith %} 
+  {% else %} 
+    {% if kategoria %}
+      {{ kategoria.nazwa }}
+    {% else %}
+       Produkty
+    {% endif %}
+  {% endif %}
+  </h3>
+</div>
+<div class="dwie-kolumny-tresc">
+  <div class="sidebar" id="sidebar">
+    <h3 class = "nagnav">Kategorie</h3>
+      <ul>
+        <li {% if not kategoria %}class="selected"{% endif %}>
+          <a href="{% url "sklep:lista_produktow" %}">Wszystkie</a>
+        </li>
+        {% for c in kategorie %}
+          <li {% if kategoria.skrot_url == c.skrot_url %}class="selected"{% endif %}>
+            <a href="{{ c.get_absolute_url }}">{{ c.nazwa }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+  </div>
+  <div class="lista-produktow">
+  {% for produkt in produkty %}
+    <div class="item">
+      <a href="{{ produkt.get_absolute_url }}">
+        <img src="{% if produkt.zdjecie %}{{ produkt.zdjecie.url }}" {% else %}{% static "img/no_image.png" %}" {% endif %}">
+      </a>
+      <a href="{{ produkt.get_absolute_url }}">{{ produkt.nazwa }}</a>
+      <br>
+      {{ produkt.cena }} zł
+    </div>
+  {% endfor %} 
+  </div>
+</div>
+
+  
+{% endblock %}

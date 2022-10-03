@@ -25,7 +25,7 @@ SECRET_KEY = 'yf4wk1i8uko8b1ji*ukh8zr)9*$_@1ljufx5%%*^87hyo76kjo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['radmer.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'koszyk.apps.KoszykConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+   
 ]
 
 MIDDLEWARE = [
@@ -134,8 +135,8 @@ CART_SESSION_ID = 'koszyk'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'radmer123@gmail.com'
-DEFAULT_FROM_EMAIL = 'radmer123@gmail.com'
+EMAIL_HOST_USER = 'meryk154@gmail.com'
+DEFAULT_FROM_EMAIL = 'meryk154@gmail.com'
 EMAIL_DISPLAY_NAME = 'Sklep u Eweliny'
 EMAIL_HOST_PASSWORD = 'eahgyyxplutfzelq'
 EMAIL_USE_TLS = True

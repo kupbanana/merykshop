@@ -14,13 +14,17 @@ body {
 
 
 h1, h2, h3, h4, h5 , h6 { 
-    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+    font-family: 'Ubuntu', sans-serif; 
+    font-weight:normal;
+    text-align:center;
 }
 
 a {
-    text-decoration:none;
-    color:#9f6428;
+    color:#a86c28
+   
 }
+
+
 
 .logo {
     margin:auto;
@@ -49,7 +53,8 @@ a.duzy {
 }
 
 h3.nagnav {
-    font-size: 1.5vw;
+    text-align:center;
+    font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;    
     color:rgb(7, 51, 7)
@@ -69,7 +74,7 @@ a:hover {
 
 a.button, input[type="submit"] {
     color:#fff;
-    background:#9f6428;
+    background:#9f2828;
     border-radius:4px;
     padding:10px 20px;
     font-size:14px;
@@ -170,13 +175,47 @@ ul.errorlist {
     overflow:auto;
 }
 
-#subheader {
-    background: rgb(59, 57, 57);
-    color:black;
-    padding:15px 100px;
 
+
+#subheader {
+    
+    
     overflow:auto;
 }
+
+ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    }
+    
+li a {
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    width:130px;
+    text-decoration: none;
+    color: rgb(13, 17, 17);
+    background-color: rgb(165, 146, 85);
+    padding: 10px 15px;
+    margin: 0px 1px 1px 0px;
+    border: 1px solid navy;
+    border-radius: 3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 2px 3px gray;
+    -moz-box-shadow: 0px 2px 3px gray;
+    -webkit-box-shadow: 0px 2px 3px gray;
+    }
+    
+li a:hover{
+    color: rgb(241, 241, 241);
+    background: rgb(165, 142, 14);
+    border: 1px solid rgb(221, 199, 2);
+    }
 
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
@@ -190,6 +229,7 @@ ul.errorlist {
     float:right;
     padding-top:4px;
 }
+  
 
 .content {
     display: -webkit-box;
@@ -222,10 +262,7 @@ ul.errorlist {
     display:block;
 }
 
-#sidebar ul li.selected {
-    background:#9f6428;
-    border-radius:4px;
-}
+
 
 #sidebar ul li.selected a {
     color:#fff;
@@ -334,14 +371,16 @@ ul.errorlist {
 */
 
 .order-form {
+    padding:0px 70px ;
     float:left;
 }
 
 .order-info {
+    
     float:right;
     width:300px;
     background:#efefef;
-    padding:10px 20px;
+    padding:20px 60px;
     color:#333;
     border-bottom:4px solid #5993bb;
 }

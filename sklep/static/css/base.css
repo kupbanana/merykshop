@@ -9,21 +9,36 @@ body {
     padding:0;
     font-family:helvetica, sans-serif; 
     height:100%;
+    
+
 
 }
+h13
+{
 
+        text-shadow: black 0.9em 1.6em 0.12em;
+    
+}
+
+
+a{
+    text-decoration: none;
+    color:blue;
+    font-size: small;
+   
+   
+}
+
+p{
+    color:rgb(12, 15, 12); 
+   
+}
 
 h1, h2, h3, h4, h5 , h6 { 
     font-family: 'Ubuntu', sans-serif; 
     font-weight:normal;
     text-align:center;
 }
-
-a {
-    color:#a86c28
-   
-}
-
 
 
 .logo {
@@ -51,7 +66,19 @@ a.duzy {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
 }
+h3.zal {
+    color:green;
+    float:left;
+    font-size:small;
+    margin-top: auto;
+   
+}
 
+h7
+{
+    float:right;
+
+}
 h3.nagnav {
     text-align:center;
     font-size: 2vw;
@@ -176,15 +203,13 @@ ul.errorlist {
 }
 
 
-
 #subheader {
-    
-    
     overflow:auto;
 }
 
+
 ul {
-    float: left;
+    
     width: 100%;
     padding: 0;
     margin: 0;
@@ -202,7 +227,7 @@ li a {
     background-color: rgb(165, 146, 85);
     padding: 10px 15px;
     margin: 0px 1px 1px 0px;
-    border: 1px solid navy;
+    border: 1px solid rgb(160, 89, 7);
     border-radius: 3px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -227,11 +252,13 @@ li a:hover{
 
 #subheader .koszyk {
     float:right;
-    padding-top:4px;
+    text-align: left;
+    padding-top: 5%;
 }
   
 
 .content {
+   
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -483,7 +510,7 @@ li a:hover{
 
 .prawa {
 
-    font-size: 4.5vw;
+    font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;    
     background: linear-gradient(to right, #9f6428,#ead487, #9f6428);
@@ -500,4 +527,7 @@ li a:hover{
 }
 
 
- 
+ button 
+ {
+float:left;
+ }

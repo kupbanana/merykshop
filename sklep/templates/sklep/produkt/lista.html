@@ -17,6 +17,10 @@
 
 <div>
   <h3>
+  {% if request.session.msg != '' %}
+    {{request.session.msg}} </h3></br>
+    
+  {% endif %}
   {% if szukane %}
     {% with razem_towarow=produkty|length %} 
         {% if razem_towarow > 0  %} 

@@ -2,7 +2,7 @@ import time
 import math
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
-from orders.models import Zamowienie
+from zamowienia.models import Zamowienie
 from django.urls import reverse
 import weasyprint
 from io import BytesIO
@@ -69,7 +69,7 @@ def platnosc_zakonczona(order_id):
                          settings.EMAIL_DISPLAY_NAME,
                          [order.email])
     # wygeneruj PDF
-    html = render_to_string('orders/order/pdf.html', {'order': order})
+    html = render_to_string('zamówienia/zamówienie/pdf.html', {'order': order})
     out = BytesIO()
     stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')]
     weasyprint.HTML(string=html).write_pdf(out,

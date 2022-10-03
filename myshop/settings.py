@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from telnetlib import AUTHENTICATION
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,23 +26,34 @@ SECRET_KEY = 'yf4wk1i8uko8b1ji*ukh8zr)9*$_@1ljufx5%%*^87hyo76kjo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ACCOUNT_EMAIL_REQUIRED=True
+
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sklep.apps.SklepConfig',
     'koszyk.apps.KoszykConfig',
-    'orders.apps.OrdersConfig',
+    'zamowienia.apps.ZamowieniaConfig',
+    'uzytkownicy.apps.UzytkownicyConfig',
+    'oceny.apps.OcenyConfig',
     'payment.apps.PaymentConfig',
-   
+    'django_extensions',
+    
 ]
 
 MIDDLEWARE = [
@@ -59,7 +71,7 @@ ROOT_URLCONF = 'myshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +84,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
@@ -131,12 +144,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'koszyk'
-
+SESSION_ENGINE = "django.contrib.sessions.backends.cached_db" 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'meryk154@gmail.com'
-DEFAULT_FROM_EMAIL = 'meryk154@gmail.com'
+EMAIL_HOST_USER = 'radmer123@gmail.com'
+DEFAULT_FROM_EMAIL = 'radmer123@gmail.com'
 EMAIL_DISPLAY_NAME = 'Sklep u Eweliny'
 EMAIL_HOST_PASSWORD = 'eahgyyxplutfzelq'
 EMAIL_USE_TLS = True
@@ -149,3 +162,41 @@ BRAINTREE_PRIVATE_KEY = '534af2c6266a9ec5732fbc8e6dff2de6'  # Private key
 STRIPE_PUBLIC_KEY = 'pk_test_51LTKGpEZ5ZSlKLiWCJz5jvUDCxSP0wDyyFMqKa2W7l6O1Lzvc3LAOE1oDce7eBlo8bYVp7uQK3XFDKK0zjd1tnr600TTNUnIxl'
 STRIPE_PRIVATE_KEY='sk_test_51LTKGpEZ5ZSlKLiW0J4UvDvP47KnxMD7kazLmeZoH2vuyri73O2sDjNWjE8IAWPZBjtnla8Ha4izL6Cn249Ka3dJ00rZ28jaax'
 STRIPE_SECRET_KEY=STRIPE_PRIVATE_KEY
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'FIELDS': [
+            'id',
+            'email',
+            'name',
+            'first_name',
+            'last_name',
+            'link',
+            'gender',
+            'updated_time'],
+        'EXCHANGE_TOKEN': True,
+        'VERIFIED_EMAIL': True,
+        'VERSION': 'v2.4'
+    }
+}

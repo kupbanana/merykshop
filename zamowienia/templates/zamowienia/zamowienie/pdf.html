@@ -1,0 +1,49 @@
+<html>
+<body>
+  <h1>Sklep Eweliny</h1>
+  <p>
+    Faktura nr {{ order.id }}</br>
+    <span class="secondary">
+      {{ order.utworzone|date:"M d, Y" }}
+    </span>
+  </p>
+
+  <h3>Dla</h3>
+  <p>
+    {{ order.imie }} {{ order.nazwisko }}<br>
+    {{ order.email }}<br>
+    {{ order.adres }}<br>
+    {{ order.kod_pocztowy }}, {{ order.miasto }}
+  </p>
+
+  <h3>Zakupione towary</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Produkt</th>
+        <th>Cena</th>
+        <th>Ilość</th>
+        <th>Koszt</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in order.artykuly.all %}
+        <tr class="row{% cycle "1" "2" %}">
+          <td>{{ item.produkt.nazwa }}</td>
+          <td class="num">{{ item.cena }} zł</td>
+          <td class="num">{{ item.ilosc }}</td>
+          <td class="num">{{ item.get_cost }} zł</td>
+        </tr>
+      {% endfor %}
+      <tr class="total">
+        <td colspan="3">Razem</td>
+        <td class="num">{{ order.get_total_cost }} zł</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <span class="{% if order.zaplacone %}paid{% else %}pending{% endif %}">
+    {% if order.zaplacone %}Zapłacono{% else %}Oczekuje na zapłatę{% endif %}
+  </span>
+</body>
+</html>

@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,12 +16,21 @@
         <p>Twoja kawa i herbata</p>
       </div>
     </div>
+    
      <div id="subheader">
-      <a href="/">Strona główna</a>
-      <div class="koszyk">
+
+      <ul id="menu">
+        <li> <a href="/">Strona główna</a></li>
+        <li> <a href="/">O Nas</a></li>
+        <li> <a href="/">Kontakt</a></li>
+        <li><a href="/">Zwroty</a></li>
+      </ul>
+    
+        <div class="koszyk">
         {% with razem_towarow=koszyk|length %}
           {% if razem_towarow > 0 %}
-            Twój koszyk:
+          <img alt="koszyk" src={% static "img/koszyk.png" %}>
+          Twój koszyk :
             <a href="{% url "koszyk:koszyk_szczegoly" %}">
               {{ razem_towarow }} artykuł(ów) ,
               {{ koszyk.oblicz_laczna_cene }} zł

@@ -5,16 +5,16 @@ from . import views
 
 app_name = 'sklep'
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('logout/',views.wyloguj, name='logout'),
     path('accounts/login/',views.zaloguj, name='login'),
     path('accounts/signup/',views.rejestracja, name='rejestracja'),    
+<<<<<<< HEAD
     path ('privacy/',views.privacy, name ='privacy'),
-    path ('o_nas/',views.o_nas, name ='o_nas'),
-    path ('kontakt/',views.kontakt, name ='kontakt'),
-    path ('zwroty/',views.zwroty, name ='zwroty'),
+=======
+    #path('account/', include('account.urls')),
+>>>>>>> origin/main
     path('account/', include('allauth.urls')),
     path('', views.lista_produktow, name='lista_produktow'),
     path('znajdz_produkty/', views.znajdz_produkty, name = 'znajdz_produkty'),

@@ -57,18 +57,12 @@ def wyloguj(request):
 def rejestracja(request):
     return render(request,'accounts/signup')
 
-
+<<<<<<< HEAD
 def privacy(request):
     return render(request,'sklep/privacy.html')
 
-def o_nas(request):
-    return render(request,'sklep/o_nas.html')
-
-def kontakt(request):
-    return render(request,'sklep/kontakt.html')
-
-def zwroty(request):
-    return render(request,'sklep/zwroty.html')
+=======
+>>>>>>> origin/main
 
 def zaloguj(request):
     

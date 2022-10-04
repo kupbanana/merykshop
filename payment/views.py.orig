@@ -68,7 +68,11 @@ def platnosc_zakonczona(order_id):
                          settings.EMAIL_DISPLAY_NAME,
                          [order.email])
     # wygeneruj PDF
+<<<<<<< HEAD
     html = render_to_string('zamowienia/zamowienie/pdf.html', {'order': order})
+=======
+    html = render_to_string('zamówienia/zamówienie/pdf.html', {'order': order})
+>>>>>>> origin/main
     out = BytesIO()
     stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')]
     weasyprint.HTML(string=html).write_pdf(out,

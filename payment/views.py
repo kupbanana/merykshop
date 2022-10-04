@@ -1,4 +1,4 @@
-go.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from zamowienia.models import Zamowienie
 from django.urls import reverse

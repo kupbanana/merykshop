@@ -24,10 +24,10 @@
       
       <ul id="menu">
         <li> <a href="/">Strona główna</a></li>
-        <li> <a href="/">O Nas</a></li>
-        <li> <a href="/">Galeria</a></li>
-        <li> <a href="/">Kontakt</a></li> 
-        <li><a href="/">Zwroty</a></li>
+        <li> <a href="/o_nas">O Nas</a></li>
+        <li> <a href="/privacy">Polityka prywatności</a></li>
+        <li> <a href="/kontakt">Kontakt</a></li> 
+        <li><a href="/zwroty">Zwroty</a></li>
       </ul>
       {% if user.is_authenticated %}
           {% get_social_accounts user as accounts %}

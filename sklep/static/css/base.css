@@ -7,31 +7,24 @@ html {
 body { 
     margin:0;
     padding:0;
-    font-family:helvetica, sans-serif; 
+    /* font-family:helvetica, sans-serif; */ 
     height:100%;
-    
-
-
 }
+
+
 h13
 {
-
-        text-shadow: black 0.9em 1.6em 0.12em;
-    
+        text-shadow: black 0.9em 1.6em 0.12em; 
 }
-
 
 a{
     text-decoration: none;
-    color:blue;
-    font-size: small;
-   
-   
+    color:rgb(8, 8, 223);
+    font-size: small;  
 }
 
 p{
-    color:rgb(12, 15, 12); 
-   
+    color:rgb(12, 15, 12);   
 }
 
 h1, h2, h3, h4, h5 , h6 { 
@@ -39,7 +32,6 @@ h1, h2, h3, h4, h5 , h6 {
     font-weight:normal;
     text-align:center;
 }
-
 
 .logo {
     margin:auto;
@@ -66,6 +58,7 @@ a.duzy {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
 }
+
 h3.zal {
     color:green;
     float:left;

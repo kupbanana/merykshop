@@ -47,3 +47,6 @@ class Produkt(models.Model):
     def get_absolute_url(self):
         return reverse('sklep:szczegoly_produktu',
                        args=[self.id, self.skrot_url])
+
+
+

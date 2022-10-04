@@ -36,14 +36,21 @@ class Koszyk(object):
 
     def __len__(self):
         """
-        Zlicz towary w koszyku.
+        Zlicz towary w koszyku.        
         """
+        suma=0
+        try:
+            suma = sum(towar['ilosc'] for towar in self.koszyk.values())
+        except:
+            self.wyczysc()
+            pass
+ 
         return sum(towar['ilosc'] for towar in self.koszyk.values())
 
     def dodaj(self, produkt, ilosc=1, nadpisz_ilosc=False):
         """
-        Dodaj produkt do koszyka lub zaktualizuj ilość.
-        """
+        Dodaj produkt do koszyka lub zaktualizuj ilość.        """
+
         produkt_id = str(produkt.id)
         if produkt_id not in self.koszyk:
             self.koszyk[produkt_id] = {'ilosc': 0,
@@ -69,6 +76,9 @@ class Koszyk(object):
 
     def wyczysc(self):
         # usuń koszyk z sesji
+        self.koszyk.clear()
+        
+
         del self.session[settings.CART_SESSION_ID]
         self.zapisz()
 

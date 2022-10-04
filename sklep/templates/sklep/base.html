@@ -1,4 +1,7 @@
+{% load socialaccount %}
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 <!DOCTYPE html>
 <html>
@@ -13,23 +16,40 @@
         <img src={% static "img/logo.png" %}>
       </div>
       <div class="prawa">
-        <p>Twoja kawa i herbata</p>
+       <h13><p>Twoja kawa i herbata</p></h13> 
       </div>
     </div>
     
      <div id="subheader">
-
+      
       <ul id="menu">
         <li> <a href="/">Strona główna</a></li>
         <li> <a href="/">O Nas</a></li>
-        <li> <a href="/">Kontakt</a></li>
+        <li> <a href="/">Galeria</a></li>
+        <li> <a href="/">Kontakt</a></li> 
         <li><a href="/">Zwroty</a></li>
       </ul>
-    
+      {% if user.is_authenticated %}
+          {% get_social_accounts user as accounts %}
+            {% if accounts %} 
+                {% for key, val in accounts.items %}
+             <h3 class="zal"> Zalogowany przez: {{ key|title }} </h3>
+                {% endfor %}
+             {% endif %} 
+      <p></p>
+       <h3 class="zal">Zalogowany jako: {{user.username}}</h3>
+          <h7><a href="{%url 'sklep:logout' %}">Wyloguj się</a></h7>
+      {% else %}
+          <p> Użytkownik niezalogowany</p>
+         <h7>
+            <a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></br>
+            <a href="{%url 'sklep:login' %}">Zaloguj</a></br>
+         </h7>       
+      {% endif %}
         <div class="koszyk">
         {% with razem_towarow=koszyk|length %}
           {% if razem_towarow > 0 %}
-          <img alt="koszyk" src={% static "img/koszyk.png" %}>
+          
           Twój koszyk :
             <a href="{% url "koszyk:koszyk_szczegoly" %}">
               {{ razem_towarow }} artykuł(ów) ,
@@ -47,6 +67,9 @@
             <input type="search" placeholder="Znajdź w sklepie" id="szuknazwa" name="szuknazwa">
             <input type="submit" value="Szukaj">
           </form>
+        </div>
+        <div id ="uzytkownik">
+                    
         </div>
       </div>
     </div>

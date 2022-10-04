@@ -1,8 +1,6 @@
-import time
-import math
-from django.shortcuts import render, redirect, get_object_or_404
+go.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
-from orders.models import Zamowienie
+from zamowienia.models import Zamowienie
 from django.urls import reverse
 import weasyprint
 from io import BytesIO
@@ -30,6 +28,7 @@ def payment_with_stripe(request):
     payment_method = request.session.get('stripe_method')
     order = Zamowienie.objects.get(id=order_id)
     amount = int(round(order.oblicz_laczna_kwote()*100))
+    page_prefix="https://{}{}" if request.is_secure() else "http://{}{}"
 
     checkout_session = stripe.checkout.Session.create(
         
@@ -48,8 +47,8 @@ def payment_with_stripe(request):
             },
         ],
         mode='payment',
-        success_url="http://{}{}".format(host,reverse('payment:payment-success')),
-        cancel_url="http://{}{}".format(host,reverse('payment:payment-cancel')),
+        success_url=page_prefix.format(host,reverse('payment:payment-success')),
+        cancel_url=page_prefix.format(host,reverse('payment:payment-cancel')),
     )   
     return redirect(checkout_session.url, code=303)
 
@@ -69,7 +68,7 @@ def platnosc_zakonczona(order_id):
                          settings.EMAIL_DISPLAY_NAME,
                          [order.email])
     # wygeneruj PDF
-    html = render_to_string('orders/order/pdf.html', {'order': order})
+    html = render_to_string('zamowienia/zamowienie/pdf.html', {'order': order})
     out = BytesIO()
     stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')]
     weasyprint.HTML(string=html).write_pdf(out,

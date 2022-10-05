@@ -43,11 +43,11 @@
        <h3 class="zal">Zalogowany jako: {{user.username}}</h3>
           <h7><a href="{%url 'sklep:logout' %}">Wyloguj się</a></h7>
       {% else %}
-          <p> Użytkownik niezalogowany</p>
-         <h7>
+          <p> Użytkownik niezalogowany</p>          
+            <h7>
             <a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></br>
             <a href="{%url 'sklep:login' %}">Zaloguj</a></br>
-         </h7>       
+            </h7> 
       {% endif %}
         <div class="koszyk">
         {% with razem_towarow=koszyk|length %}

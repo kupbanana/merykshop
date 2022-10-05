@@ -519,9 +519,8 @@ button
 {
     margin-left: 70%;
 }
- .footer {
-    background-color:
-    grey;
+ #footer {
+    background-color: grey;
     text-align: center;
     width: 100%;
     padding-top:5%;

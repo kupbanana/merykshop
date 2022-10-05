@@ -101,6 +101,7 @@ a.button, input[type="submit"] {
     font-size:14px;
     border:0;
     float: right;
+    padding: 1.9;
 }
 
 a.button.light {
@@ -393,7 +394,7 @@ li a:hover{
 
 .order-form {
     padding:0px 70px ;
-    float:left;
+    
 }
 
 .order-info {
@@ -517,13 +518,13 @@ li a:hover{
 }
 button 
 {
-    margin-left: 70%;
+    margin-left: 45%;
 }
  .footer {
     background-color:
     grey;
     text-align: center;
     width: 100%;
-    padding-top:5%;
+    padding: 2%;
     margin-top: 2.1%;
  }

@@ -4,28 +4,38 @@ html {
    height:100%;
 
 }
-body {
+body { 
     margin:0;
     padding:0;
-    font-family:helvetica, sans-serif;
+    /* font-family:helvetica, sans-serif; */ 
     height:100%;
-
 }
 
-
-h1, h2, h3, h4, h5 , h6 {
-    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+h13
+{
+        text-shadow: black 0.9em 1.6em 0.12em; 
 }
 
-a {
-    text-decoration:none;
-    color:#9f6428;
+a{
+    text-decoration: none;
+    color:rgb(8, 8, 223);
+    font-size: small;  
+}
+
+p{
+    color:rgb(12, 15, 12);   
+}
+
+h1, h2, h3, h4, h5 , h6 { 
+    font-family: 'Ubuntu', sans-serif; 
+    font-weight:normal;
+    text-align:center;
 }
 
 .logo {
     margin:auto;
     background-image: linear-gradient(to right, black,grey);
-
+    
 }
 
 .logo-graphic {
@@ -33,7 +43,7 @@ a {
     width:20%;
 }
 
-.tytul-sklepu
+.tytul-sklepu 
 {
     float:left;
     width:80%;
@@ -42,16 +52,32 @@ a {
 a.duzy {
     font-size: 4.5vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
+    font-style: italic;    
     background: linear-gradient(to right, #9f6428,#ead487, #9f6428);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;    
 }
 
+h3.zal {
+    color:green;
+    float:left;
+    font-size:small;
+    margin-top: auto;
+   
+}
+
+h7
+{
+    
+    float:left;
+    padding-left: 0.5%;
+
+}
 h3.nagnav {
-    font-size: 1.5vw;
+    text-align:center;
+    font-size: 2vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
+    font-style: italic;    
     color:rgb(7, 51, 7)
 }
 
@@ -69,11 +95,12 @@ a:hover {
 
 a.button, input[type="submit"] {
     color:#fff;
-    background:#9f6428;
-    border-radius:4px;
-    padding:10px 20px;
+    background:#9f2828;
+    border-radius: 10px;
+    padding: 10px 10px;
     font-size:14px;
     border:0;
+    float: right;
 }
 
 a.button.light {
@@ -92,7 +119,7 @@ a.button.light {
 table {
     width:100%;
     border-spacing:0;
-    border-collapse: collapse;
+    border-collapse: collapse; 
 }
 
 table th, table td {
@@ -134,23 +161,20 @@ td input[type="submit"] {
 }
 
 form p label, form p input {
-    float:left;
-    font-size: 14px;
-    font-weight: bold;
+
     clear:both;
 }
 
-label {
+form p label {
     font-size:14px;
-    padding-bottom:4px;
-    font-weight:bold;
+    margin-left: 34%;
+    padding-top: 20px;
 }
 
 form p input {
     width:300px;
     font-size:13px;
     margin-bottom:10px;
-    padding:10px 12px;
     border:0;
     background:#efefef;
     color:#666;
@@ -162,7 +186,7 @@ ul.errorlist {
    color:#ff0000;
    clear:both;
    font-size:13px;
-   margin:0;
+   margin:0; 
    padding:0;
 }
 
@@ -173,13 +197,44 @@ ul.errorlist {
     overflow:auto;
 }
 
-#subheader {
-    background: rgb(59, 57, 57);
-    color:black;
-    padding:15px 100px;
 
+#subheader {
     overflow:auto;
 }
+
+
+ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    }
+    
+li a {
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+    width:130px;
+    text-decoration: none;
+    color: rgb(13, 17, 17);
+    background-color: rgb(165, 146, 85);
+    padding: 2px 15px;
+    margin: 0px 1px 1px 0px;
+    border: 1px solid rgb(160, 89, 7);
+    border-radius: 3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 2px 3px grey;
+    -moz-box-shadow: 0px 2px 3px gray;
+    -webkit-box-shadow: 0px 2px 3px gray;
+    /* list-style-type: list; */
+    }
+    
+li a:hover{
+    color: rgb(241, 241, 241);
+    background: rgb(165, 142, 14);
+    border: 1px solid rgb(221, 199, 2);
+    }
 
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
@@ -191,10 +246,13 @@ ul.errorlist {
 
 #subheader .koszyk {
     float:right;
-    padding-top:4px;
+    text-align: left;
+    padding-top: 2%;
 }
+  
 
 .content {
+   
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -202,7 +260,7 @@ ul.errorlist {
     display: flex;
 }
 
-
+ 
 
     #sidebar {
         float: left;
@@ -225,10 +283,7 @@ ul.errorlist {
     display:block;
 }
 
-#sidebar ul li.selected {
-    background:#9f6428;
-    border-radius:4px;
-}
+
 
 #sidebar ul li.selected a {
     color:#fff;
@@ -237,14 +292,14 @@ ul.errorlist {
 #main {
     float:left;
     width: 96%;
-    margin-right:-220px;
+    margin-right:-220px; 
     overflow:hidden;
 }
 
 /* ------------------------------------------------  LISTA PRODUKTÓW ---------------------------------------------------
-/* lista produktów
-   grid : 3 kolumny z odstępem pomiędzy nimi
-   produkty wyświetlane w cieniowanych ramkach
+/* lista produktów  
+   grid : 2 kolumny z odstępem pomiędzy nimi
+   produkty wyświetlane w cieniowanych ramkach  
 
 */
 
@@ -269,17 +324,29 @@ ul.errorlist {
 }
 
 /* ------------------------------------------------ SZCZEGÓŁY PRODUKTU ---------------------------------------------------
-/* szczegóły produktu
-   wyjustowany tekst
-
+/* szczegóły produktu  
+   szczegóły wyświetlane w kolumnie w prawej części widoku
+   w części lewej wyświetla się menu kategorii jak w widoku listy
 */
 
 .szczegoly-produktu {
     display: grid;
-    box-shadow: 0px 0px 10px #000;
-    height: 95%;
-    width: 95%;
+    grid-template-columns: 220px 1fr;
+    grid-gap: 3em;
     margin: 0 auto;
+}
+
+.szczegoly-produktow .item {
+    background-color: #f2f2f2;
+    padding: 18px;
+    
+ }
+
+ .szczegoly-produktu .item .img {
+    float:left;
+    width:250px;
+    vertical-align: middle;
+    height:100%;    
 }
 
 .szczegoly-produktu .price {
@@ -288,25 +355,29 @@ ul.errorlist {
     font-weight:bold;
 }
 
-.szczegoly-produktu img {
-    float:left;
-    width:250px;
-    height:auto;
+.szczegoly-produktu .label {
+    color:#333;
+    font-size:16px;
+    font-weight:bold;
 }
+
+
 
 .szczegoly-produktu h1 {
     margin-bottom:10;
 }
 
 .opis-produktu {
-    padding:12px, 12px, 12px, 12px;
-    width:95%;
-    text-align:justify;
+    border-radius: 1%;
+    text-align:justify;   
     height:auto;
-    margin: 0 auto;
-    box-shadow: 0px 0px 2px #000;
+    margin-right: 24px;
+    box-shadow: 0px 0px 10px #000;
 }
 
+.opis-produktu > div {
+    padding: 20px;
+}
 .opis-produktu-tytul {
     margin: 12px;
     font-size: 28px;
@@ -321,14 +392,16 @@ ul.errorlist {
 */
 
 .order-form {
+    padding:0px 70px ;
     float:left;
 }
 
 .order-info {
+    
     float:right;
     width:300px;
     background:#efefef;
-    padding:10px 20px;
+    padding:20px 60px;
     color:#333;
     border-bottom:4px solid #5993bb;
 }
@@ -419,33 +492,38 @@ ul.errorlist {
     vertical-align:middle;
     text-align:center;
     background-image: linear-gradient(to right, black,grey);
-    grid-template-columns: 430px 2fr;
-
+    grid-template-columns: 220px 2fr;
 }
 
 .dwie-kolumny > p {
     height:100%;
-    background: linear-gradient(to right, black,grey);
-
+    background: linear-gradient(to right, black,grey);    
 }
 
 .prawa {
 
-    font-size: 4.5vw;
+    font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;
+    font-style: italic;    
     background: linear-gradient(to right, #9f6428,#ead487, #9f6428);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    -webkit-text-fill-color: transparent;      
 }
 
 .dwie-kolumny-tresc {
     display: grid;
-    grid-template-columns: 430px 2fr;
+    grid-template-columns: 220px 2fr;
     grid-gap:2em;
-
 }
-
-
-
+button 
+{
+    margin-left: 70%;
+}
+ .footer {
+    background-color:
+    grey;
+    text-align: center;
+    width: 100%;
+    padding-top:5%;
+    margin-top: 2.1%;
+ }

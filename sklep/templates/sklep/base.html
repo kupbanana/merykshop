@@ -19,18 +19,12 @@
        <h13><p>Twoja kawa i herbata</p></h13> 
       </div>
     </div>
-    
      <div id="subheader">
-      
-      <ul id="menu">
+      <ul>
         <li> <a href="/">Strona główna</a></li>
         <li> <a href="/o_nas">O Nas</a></li>
-       
         <li> <a href="/kontakt">Kontakt</a></li> 
         <li><a href="/zwroty">Zwroty</a></li>
-      </ul>
-      <ul>
-         <li> <a href="/privacy">Polityka prywatności</a></li>
       </ul>
       {% if user.is_authenticated %}
           {% get_social_accounts user as accounts %}
@@ -43,11 +37,11 @@
        <h3 class="zal">Zalogowany jako: {{user.username}}</h3>
           <h7><a href="{%url 'sklep:logout' %}">Wyloguj się</a></h7>
       {% else %}
-          <p> Użytkownik niezalogowany</p>          
-            <h7>
-            <a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></br>
+          <h3> Użytkownik niezalogowany</h3>          
+           <ul><h7>
             <a href="{%url 'sklep:login' %}">Zaloguj</a></br>
-            </h7> 
+            <a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></br>
+            </h7> </ul>
       {% endif %}
         <div class="koszyk">
         {% with razem_towarow=koszyk|length %}
@@ -71,8 +65,7 @@
             <input type="submit" value="Szukaj">
           </form>
         </div>
-        <div id ="uzytkownik">
-                    
+        <div id ="uzytkownik">                    
         </div>
       </div>
     </div>
@@ -80,6 +73,10 @@
     <div id="content">
       {% block content %}
         {% endblock %}
+    </div>
+    <div class="footer">
+        <a href="/privacy">Prywatność</a>
+        <p>Ewelina Meryk <i>17736</i></p>
     </div>
   </body>
 </html>

@@ -11,7 +11,6 @@ body {
     height:100%;
 }
 
-
 h13
 {
         text-shadow: black 0.9em 1.6em 0.12em; 
@@ -69,7 +68,9 @@ h3.zal {
 
 h7
 {
-    float:right;
+    
+    float:left;
+    padding-left: 0.5%;
 
 }
 h3.nagnav {
@@ -95,10 +96,11 @@ a:hover {
 a.button, input[type="submit"] {
     color:#fff;
     background:#9f2828;
-    border-radius:4px;
-    padding:10px 20px;
+    border-radius: 10px;
+    padding: 10px 10px;
     font-size:14px;
     border:0;
+    float: right;
 }
 
 a.button.light {
@@ -159,20 +161,20 @@ td input[type="submit"] {
 }
 
 form p label, form p input {
-    float:left;
+
     clear:both;
 }
 
 form p label {
     font-size:14px;
-    padding-bottom:4px;
+    margin-left: 34%;
+    padding-top: 20px;
 }
 
 form p input {
     width:300px;
     font-size:13px;
     margin-bottom:10px;
-    padding:10px 12px;
     border:0;
     background:#efefef;
     color:#666;
@@ -202,7 +204,6 @@ ul.errorlist {
 
 
 ul {
-    
     width: 100%;
     padding: 0;
     margin: 0;
@@ -210,7 +211,6 @@ ul {
     }
     
 li a {
-    display: block;
     float: left;
     text-align: center;
     font-size: 1.2em;
@@ -218,15 +218,16 @@ li a {
     text-decoration: none;
     color: rgb(13, 17, 17);
     background-color: rgb(165, 146, 85);
-    padding: 10px 15px;
+    padding: 2px 15px;
     margin: 0px 1px 1px 0px;
     border: 1px solid rgb(160, 89, 7);
     border-radius: 3px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    box-shadow: 0px 2px 3px gray;
+    box-shadow: 0px 2px 3px grey;
     -moz-box-shadow: 0px 2px 3px gray;
     -webkit-box-shadow: 0px 2px 3px gray;
+    /* list-style-type: list; */
     }
     
 li a:hover{
@@ -246,7 +247,7 @@ li a:hover{
 #subheader .koszyk {
     float:right;
     text-align: left;
-    padding-top: 5%;
+    padding-top: 2%;
 }
   
 
@@ -492,13 +493,11 @@ li a:hover{
     text-align:center;
     background-image: linear-gradient(to right, black,grey);
     grid-template-columns: 220px 2fr;
-
 }
 
 .dwie-kolumny > p {
     height:100%;
     background: linear-gradient(to right, black,grey);    
-
 }
 
 .prawa {
@@ -508,20 +507,23 @@ li a:hover{
     font-style: italic;    
     background: linear-gradient(to right, #9f6428,#ead487, #9f6428);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;    
-    
+    -webkit-text-fill-color: transparent;      
 }
 
 .dwie-kolumny-tresc {
     display: grid;
     grid-template-columns: 220px 2fr;
     grid-gap:2em;
-
 }
-
-
- button 
- {
-float:left;
+button 
+{
+    margin-left: 70%;
+}
+ .footer {
+    background-color:
+    grey;
+    text-align: center;
+    width: 100%;
+    padding-top:5%;
+    margin-top: 2.1%;
  }
-

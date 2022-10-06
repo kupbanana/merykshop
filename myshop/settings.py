@@ -28,7 +28,7 @@ DEBUG = True
 
 ACCOUNT_EMAIL_REQUIRED=True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','meryk.pythonanywhere.com']
 
 
 # Application definition

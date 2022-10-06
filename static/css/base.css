@@ -77,7 +77,7 @@ a.duzy {
 
 h3.zal {
     color:green;
-    font-size:small;
+    font-size:xx-small;
     margin-top: auto;
     font-family: "Lucida Console", "Courier New", monospace;
    
@@ -114,11 +114,9 @@ a.button, input[type="submit"] {
     color:#fff;
     background:#9f2828;
     border-radius: 10px;
-    padding: 10px 10px;
     font-size:14px;
-    border:0;
-    float: right;
-    padding: 1.9;
+    border:0px;
+    margin-left: 50%;
 }
 
 a.button.light {
@@ -232,7 +230,7 @@ ul {
 li a {
     float: left;
     text-align: center;
-    font-family: Snell Roundhand, cursive;
+    font-family: 'Comic Sans MS', Comic Sans, cursive;
     font-size: 1.2em;
     width:160px;
     text-decoration: none;
@@ -418,11 +416,6 @@ li a:hover{
 }
 
 .order-info {
-    
-    float:right;
-    width:300px;
-    background:#efefef;
-    padding:20px 60px;
     color:#333;
     border-bottom:4px solid #5993bb;
 }
@@ -537,7 +530,7 @@ li a:hover{
     grid-gap:2em;
 }
 button
-{background-color: #4CAF50; /* Green */
+{background-color:blue; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;

@@ -35,10 +35,10 @@
              {% endif %} 
       <p></p>
        <h3 class="zal">Zalogowany jako: {{user.username}}</h3>
-          <h7><a href="{%url 'sklep:logout' %}">Wyloguj się</a></h7>
+          <h7 class="zaliwyl"><a href="{%url 'sklep:logout' %}">Wyloguj się</a></h7>
       {% else %}
-          <h3> Użytkownik niezalogowany</h3>          
-           <ul><h7>
+         <p class="p1"> Użytkownik niezalogowany</p>          
+          <ul><h7 class="zaliwyl">
             <a href="{%url 'sklep:login' %}">Zaloguj</a></br>
             <a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></br>
             </h7> </ul>

@@ -26,12 +26,12 @@ p{
     color:rgb(12, 15, 12);   
 }
 
-h1, h2, h3, h4, h5 , h6 { 
-    font-family: 'Ubuntu', sans-serif; 
-    font-weight:normal;
-    text-align:center;
-}
 
+h1, h2, h3, h4, h5 , h6 { 
+    font-family: 'OCR a', ui-monospace;
+    font-weight: normal;
+    text-align: center;
+}
 .logo {
     margin:auto;
     background-image: linear-gradient(to right, black,grey);
@@ -524,5 +524,4 @@ button
     text-align: center;
     width: 100%;
     padding-top:5%;
-    margin-top: 2.1%;
  }

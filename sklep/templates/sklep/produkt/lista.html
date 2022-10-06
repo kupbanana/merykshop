@@ -58,7 +58,7 @@
       <a href="{{ produkt.get_absolute_url }}">
         <img src="{% if produkt.zdjecie %}{{ produkt.zdjecie.url }}" {% else %}{% static "img/no_image.png" %}" {% endif %}">
       </a>
-      <a href="{{ produkt.get_absolute_url }}">{{ produkt.nazwa }}</a>
+      <a class="a1" href="{{ produkt.get_absolute_url }}">{{ produkt.nazwa }}</a>
       <br>
       {{ produkt.cena }} zł
     </div>

@@ -78,7 +78,7 @@ def utworz_zamowienie(request):
             # ustaw zamówienie w sesji
             request.session['order_id'] = zamowienie.id
             # przekieruj płatność
-            return redirect(reverse('payment:stripe-payment'))
+            return redirect(reverse('platnosci:platnosc-stripe'))
     else:
         form = OrderCreateForm(initial=init_data)
     return render(request,

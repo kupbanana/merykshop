@@ -41,10 +41,21 @@
       {% else %}
          <p class="p1"> Użytkownik niezalogowany</p>          
           <h7 class="zaliwyl">
-            <a href="{%url 'sklep:login' %}">Zaloguj</a></br>
-            <a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></br>
-            </h7> </ul>
-      {% endif %}
+         <li><a href="{%url 'sklep:login' %}">Zaloguj</a></li>
+        <li><a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></li>
+         </h7> </ul>
+   {% endif %}
+      </div>
+      <h13><p>Twoja kawa i herbata</p></h13> 
+    </div>
+     <div id="subheader">
+      <ul>
+        <li> <a href="/">Strona główna</a></li>
+        <li> <a href="/o_nas">O Nas</a></li>
+        <li> <a href="/kontakt">Kontakt</a></li> 
+        <li><a href="/zwroty">Zwroty</a></li>
+      </ul>
+      
         <div class="koszyk">
         {% with razem_towarow=koszyk|length %}
           {% if razem_towarow > 0 %}

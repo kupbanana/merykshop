@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'zamowienia.apps.ZamowieniaConfig',
     'uzytkownicy.apps.UzytkownicyConfig',
     'oceny.apps.OcenyConfig',
-    'payment.apps.PaymentConfig',
+    'platnosci.apps.PlatnoscConfig',
     'django_extensions',
     
 ]
@@ -66,7 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'myshop.urls'
+ROOT_URLCONF = 'merykshop.urls'
 
 TEMPLATES = [
     {
@@ -86,7 +86,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'myshop.wsgi.application'
+WSGI_APPLICATION = 'merykshop.wsgi.application'
 
 
 # Database

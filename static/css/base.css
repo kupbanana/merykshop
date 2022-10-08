@@ -244,7 +244,7 @@ ul {
 li a {
     float: left;
     text-align: center;
-    font-family: 'Comic Sans MS', Comic Sans, cursive;
+    font-family: Arial, sans-serif;
     font-size: 1.2em;
     width:160px;
     text-decoration: none;

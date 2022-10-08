@@ -1,21 +1,27 @@
 {% extends "admin/base_site.html" %}
 
 {% block title %}
+
   Zamówienie {{ zamowienie.id }} {{ block.super }}
+
+
 {% endblock %}
 
 {% block breadcrumbs %}
   <div class="breadcrumbs">
     <a href="{% url "admin:index" %}">Strona główna</a> &rsaquo;
+
     <a href="{% url "admin:zamowienia_zamowienie_changelist" %}">Zamówienia</a>
     &rsaquo;
     <a href="{% url "admin:zamowienia_zamowienie_change" zamowienie.id %}">Zamówienie {{ zamowienie.id }}</a>
     &rsaquo; Szczegóły
-  </div>
+   </div>
 {% endblock %}
 
 {% block content %}
+
 <h1>Zamówienie {{ zamowienie.id }}</h1>
+
 <ul class="object-tools">
   <li>
     <a href="#" onclick="window.print();">Drukuj zamówienie</a>
@@ -24,6 +30,7 @@
 <table>
   <tr>
     <th>Utworzono</th>
+
     <td>{{ zamowienie.utworzono }}</td>
   </tr>
   <tr>
@@ -49,6 +56,7 @@
   <tr>
     <th>Status</th>
     <td>{% if zamowienie.zaplacone %}Zapłacono{% else %}Oczekuje na zapłatę{% endif %}</td>
+
   </tr>
 </table>
 
@@ -64,17 +72,21 @@
       </tr>
     </thead>
     <tbody>
+
       {% for pozycja in zamowienie.artykuly.all %}
         <tr class="row{% cycle "1" "2" %}">
           <td>{{ pozycja.produkt.nazwa }}</td>
           <td class="num">{{ pozycja.cena }} zł</td>
           <td class="num">{{ pozycja.ilosc }}</td>
           <td class="num">{{ pozycja.oblicz_cene }} zł</td>
+
         </tr>
       {% endfor %}
       <tr class="total">
         <td colspan="3">Razem</td>
+
         <td class="num">${{ zamowienie.oblicz_laczna_kwote }}</td>
+
       </tr>
     </tbody>
   </table>

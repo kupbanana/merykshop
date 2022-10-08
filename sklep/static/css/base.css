@@ -24,6 +24,7 @@ body {
 {
     text-align:center;
     font-family: "Lucida Console", "Courier New", monospace; 
+    font-size:medium;
 }
 .p2
 {
@@ -31,12 +32,8 @@ body {
 }
 h7.zaliwyl
 {
-float: right;
-margin-left: 50%;
-}
-h13
-{
-text-shadow: black 0.9em 1.6em 0.12em; 
+    float: right;
+    -webkit-text-stroke: thin;
 }
 
 a{
@@ -87,20 +84,13 @@ a.duzy {
 }
 
 h3.zal {
+    text-align:right;
     color:green;
-    font-size:xx-small;
+    font-size:small;
     margin-top: auto;
     font-family: "Lucida Console", "Courier New", monospace;
-   
 }
 
-h7
-{
-    
-    float:left;
-    padding-left: 0.5%;
-
-}
 h3.nagnav {
     text-align:center;
     font-size: xx-large;
@@ -246,7 +236,7 @@ li a {
     float: left;
     text-align: center;
     font-family: Arial, sans-serif;
-    font-size: 1.2em;
+    font-size:medium;
     width:160px;
     text-decoration: none;
     color: rgb(13, 17, 17);
@@ -528,17 +518,20 @@ li a:hover{
     height:100%;
     background: linear-gradient(to right, black,grey);    
 }
-
+h13
+{
+     
+     text-shadow: black 0.9em 1.6em 0.12em;
+}
 .prawa {
 
+     background: linear-gradient(to right, #9f6428,#ead487, #9f6428);   
     font-size: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;    
-    background: linear-gradient(to right, #9f6428,#ead487, #9f6428);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;      
+    font-style: italic;     
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
 .dwie-kolumny-tresc {
     display: grid;
     grid-template-columns: 220px 2fr;

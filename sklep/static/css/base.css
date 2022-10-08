@@ -9,7 +9,7 @@ body {
     padding:0;
     height:100%;
 }
-.a1:hover
+.item:hover
 {
     font-size:150%;
 }
@@ -17,14 +17,10 @@ body {
 {
     font-size:large;
     font-family:OCR A Std, monospace;
-    float: left;
-    margin-right: 5%;
 }
-.p1
+.h111
 {
-    text-align:center;
-    font-family: "Lucida Console", "Courier New", monospace; 
-    font-size:medium;
+    font-size:small;
 }
 .p2
 {
@@ -47,9 +43,7 @@ a.podpis
     font-family: "Lucida Console", "Courier New", monospace; 
     color:#000;
 }
-p{
-    color:rgb(12, 15, 12);   
-}
+
 
 h1, h2, h3, h4, h5 , h6 { 
     font-family: 'Bookman, URW Bookman L', serif
@@ -83,13 +77,6 @@ a.duzy {
     -webkit-text-fill-color: transparent;    
 }
 
-h3.zal {
-    text-align:right;
-    color:green;
-    font-size:small;
-    margin-top: auto;
-    font-family: "Lucida Console", "Courier New", monospace;
-}
 
 h3.nagnav {
     text-align:center;
@@ -118,23 +105,11 @@ a.button, input[type="submit"] {
     padding: 10px 10px;
     font-size:14px;
     border:0;
-    margin: 2%;
-    float: right;
 }
 
 a.button.light {
     color:#666;
     background:#ededed;
-    margin-right: 8%;
-    float: right;
-}
-
-.text-left {
-    text-align:left;
-}
-
-.text-right {
-    text-align:right;
 }
 
 table {
@@ -188,8 +163,6 @@ form p label, form p input {
 
 form p label {
     font-size:14px;
-    margin-left: 44%;
-    padding-top: 20px;
 }
 
 form p input {
@@ -203,6 +176,10 @@ form p input {
     border-radius:4px;
 }
 
+.socialaccount_ballot
+{
+    float: left;
+}
 ul.errorlist {
    float:left;
    color:#ff0000;
@@ -212,24 +189,22 @@ ul.errorlist {
    padding:0;
 }
 
-
 #header {
     padding:10px 100px;
     font-size:18px;
     overflow:auto;
 }
 
-
 #subheader {
-    overflow:auto;
-}
-
+             overflow:auto;
+            }
 
 ul {
     width: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
+    font-size: medium;
     }
     
 li a {
@@ -268,25 +243,12 @@ li a:hover{
 }
 
 #subheader .koszyk {
-    margin-left: 80%;
     float:right;
     text-align: left;
     padding-top: 2%;
 }
-  
 
-.content {
-   
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
- 
-
-    #sidebar {
+ #sidebar {
         float: left;
         height:100%;
         padding:30px 20px 0 0;
@@ -329,10 +291,10 @@ li a:hover{
 
 .lista-produktow {
    display:grid;
-   grid-template-columns: 1fr 1fr;
-   grid-gap: 3em;
+   grid-gap: 2em;
    width: 80%;
    margin: 0 auto;
+   grid-template-columns: auto auto auto ;
 
 }
 
@@ -417,6 +379,7 @@ li a:hover{
 
 .order-form {
     padding:0px 70px ;
+    text-align: -webkit-center;
     
 }
 
@@ -520,15 +483,13 @@ li a:hover{
 }
 h13
 {
-     
+    font-size: 70px;
      text-shadow: black 0.9em 1.6em 0.12em;
 }
 .prawa {
 
      background: linear-gradient(to right, #9f6428,#ead487, #9f6428);   
-    font-size: 50px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: italic;     
+    font-style: italic;   
    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -548,7 +509,6 @@ button
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 45%;
 }
  .footer {
     background-color:
@@ -557,3 +517,16 @@ button
     width: 100%;
     padding: 2%;
  }
+
+p.text-right
+{
+    text-align: right;
+}
+#content
+{
+    text-align: center;
+}
+form.login
+{
+    text-align: center;
+}

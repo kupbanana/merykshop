@@ -27,13 +27,6 @@ def get_social_user(request):
     return SocialAccount.objects.filter(user=request.user)[0]
 
 
-# imie = forms.CharField(max_length=50)
-# nazwisko = forms.CharField(max_length=50)
-# email = forms.EmailField()
-# adres = forms.CharField(max_length=250)
-# kod_pocztowy = forms.CharField(max_length=20)
-# miasto = forms.CharField(max_length=100)
-
 def utworz_zamowienie(request):
     koszyk = Koszyk(request)
     zalogowany_user = request.user

@@ -8,20 +8,20 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 import stripe
 
-def payment_done(request):
+def platnosc_wykonana(request):
     order_id = request.session.get('order_id')
     order = Zamowienie.objects.get(id=order_id)
     order.zaplacone = True
     order.save()
     platnosc_zakonczona(order_id)
-    return render(request, 'payment/done.html')
+    return render(request, 'platnosci/wykonana.html')
 
 
-def payment_canceled(request):
-    return render(request, 'payment/canceled.html')
+def platnosc_anulowana(request):
+    return render(request, 'platnosci/anulowana.html')
 
 
-def payment_with_stripe(request):
+def platnosc_przez_stripe(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
     host = request.get_host()        
     order_id = request.session.get('order_id')
@@ -47,8 +47,8 @@ def payment_with_stripe(request):
             },
         ],
         mode='payment',
-        success_url=page_prefix.format(host,reverse('payment:payment-success')),
-        cancel_url=page_prefix.format(host,reverse('payment:payment-cancel')),
+        success_url=page_prefix.format(host,reverse('platnosci:platnosc-sukces')),
+        cancel_url=page_prefix.format(host,reverse('platnosci:platnosc-anulowana')),
     )   
     return redirect(checkout_session.url, code=303)
 

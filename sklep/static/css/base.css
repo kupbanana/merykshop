@@ -564,3 +564,11 @@ button
     width: 100%;
     padding: 2%;
  }
+ul.prawygorny
+{
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background:fixed;
+}

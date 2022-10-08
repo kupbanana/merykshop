@@ -17,6 +17,8 @@ body {
 {
     font-size:large;
     font-family:OCR A Std, monospace;
+    float: left;
+    margin-right: 5%;
 }
 .p1
 {
@@ -542,7 +544,8 @@ li a:hover{
     grid-gap:2em;
 }
 button
-{background-color:blue; /* Green */
+{
+    background-color:blue; 
     border: none;
     color: white;
     padding: 15px 32px;

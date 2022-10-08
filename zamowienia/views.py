@@ -31,9 +31,11 @@ def utworz_zamowienie(request):
     koszyk = Koszyk(request)
     zalogowany_user = request.user
     init_data={}
+    zamowienie_goscia=True
     guest_user=get_object_or_404(User, last_name='Gość')
     #logout(request)
     if (zalogowany_user.is_authenticated):
+        zamowienie_goscia=False
         if (not is_social(request)): 
             profil = UzytkownikProfil.objects.get(user=zalogowany_user)
             init_data={"imie":  zalogowany_user.first_name, "nazwisko": zalogowany_user.last_name, "email": zalogowany_user.email, "adres":profil.adres, "kod_pocztowy":profil.kod_pocztowy, "miasto":profil.miasto }
@@ -46,18 +48,18 @@ def utworz_zamowienie(request):
         init_data={"imie":  zalogowany_user.first_name, "nazwisko": zalogowany_user.last_name, "email": "" }    
         # sprawdzic, czy None, jeśli tak, wypełnić pola zamówienia danymi gościa i pozwolić na wypełnienie pól formularza
         # jeśli nie None, to wypełnić formularz danymi użytkownika z bazy danych
-    if (request.method=='POST'):
+    if (request.method=='POST'): #przesłano formularz
         form = OrderCreateForm(request.POST,initial=init_data)
-        #form = OrderCreateForm(initial={"imie":  zalogowany_user.first_name, "nazwisko": zalogowany_user.last_name, "email": zalogowany_user.email, "adres":profil.adres, "kod_pocztowy":profil.kod_pocztowy, "miasto":profil.miasto })
         if form.is_valid():
             # Utworz zamowienie na podstawie pól formularza
-            #Subject(subject_id=1, name='Physics', max_marks=100)
-            
             zamowienie = Zamowienie(uzytkownik=zalogowany_user,utworzone=datetime.now())
+            zamowienie.imie = form.cleaned_data['imie']
+            zamowienie.nazwisko = form.cleaned_data['nazwisko']
             zamowienie.email = form.cleaned_data['email']
             zamowienie.adres = form.cleaned_data['adres']
             zamowienie.kod_pocztowy = form.cleaned_data['kod_pocztowy']
             zamowienie.miasto = form.cleaned_data['miasto']
+            zamowienie.gosc = zamowienie_goscia
             zamowienie.save()
             for towar in koszyk:
                 PozycjaZamowienia.objects.create(zamówienie=zamowienie,
@@ -92,7 +94,6 @@ def zamowienie_utworzone(id_zamowienia):
                           settings.EMAIL_DISPLAY_NAME,
                           [zamowienie.email])
     return mail_sent
-
 
 
 

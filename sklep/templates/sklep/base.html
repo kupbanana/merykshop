@@ -22,25 +22,24 @@
           {% get_social_accounts user as accounts %}
           {% if accounts %} 
           {% for key, val in accounts.items %}
-          <h3 class="zal"> Zalogowany przez: {{ key|title }} </h3>
+          <h111> Zalogowany przez: {{ key|title }} </h111>
            {% endfor %}
-            {% endif %} 
-              <p></p>
-              <p class="p1">Zalogowany jako: {{user.username}}</p>
-             
+            {% endif %}
+              <h111>Zalogowany jako: {{user.username}}</h111>
+
                <li>
                  <h7 class="zaliwyl">
                   <a href="{%url 'sklep:logout' %}">Wyloguj się</a>
                  </h7>
                </li>
                    {% else %}
-                   <p class="p1"> Użytkownik niezalogowany</p>        
+                   <h111> Użytkownik niezalogowany</h111>        
                    <h7 class="zaliwyl">
                    <li><a href="{%url 'sklep:login' %}">Zaloguj</a></li>
                    <li><a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></li>
                    </h7> </ul>
                  {% endif %}
-        <h13><p>Twoja kawa i herbata</p></h13> 
+       <ul> <h13><p>Twoja kawa i herbata</p></h13> </ul>
       </div>
 
     </div>

@@ -19,10 +19,10 @@
     </ul>
     <p>Razem:{{ koszyk.oblicz_laczna_cene }} zł</p>
   </div>
-
+  
   <form method="post" class="order-form">
     {{ form.as_p }}
-    <p><input type="submit" value="Złóż zamówienie"></p>
+    <input type="submit" value="Złóż zamówienie">
     {% csrf_token %}
   </form>
 

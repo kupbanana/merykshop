@@ -126,12 +126,14 @@ a.button, input[type="submit"] {
     padding: 10px 10px;
     font-size:14px;
     border:0;
-   margin-left: 50%;
+    margin-left:70%;
 }
 
 a.button.light {
     color:#666;
     background:#ededed;
+    margin-right: 8%;
+    float: right;
 }
 
 .text-left {
@@ -164,7 +166,7 @@ tbody tr.subtotal {
 }
 
 thead th, tbody tr.total {
-    background:#9f6428;
+    background:rgb(165, 146, 85);
     color:#fff;
     font-weight:bold;
 }

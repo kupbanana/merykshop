@@ -128,7 +128,8 @@ a.button, input[type="submit"] {
     padding: 10px 10px;
     font-size:14px;
     border:0;
-    margin-left:70%;
+    margin: 2%;
+    float: right;
 }
 
 a.button.light {

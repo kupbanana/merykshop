@@ -1,13 +1,16 @@
 from django.db import models
-from uzytkownicy.models import UzytkownikProfil
+from django.contrib.auth.models import User
 from sklep.models import Produkt
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Ocena(models.Model):
-    product = models.ForeignKey(Produkt, on_delete=models.CASCADE)
-    uzytkownik = models.ForeignKey(UzytkownikProfil, on_delete=models.CASCADE)
+    produkt = models.ForeignKey(Produkt, on_delete=models.CASCADE)
+    uzytkownik = models.ForeignKey(User, on_delete=models.CASCADE)
     gwiazdki = models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(5)])
 
+    class Meta:
+        verbose_name = 'Ocena'
+        verbose_name_plural = 'Oceny'
     def __str__(self):
-        return str(self.product)+"---"+str(self.user)
+        return str(self.produkt)+"---"+str(self.uzytkownik)+"----"+str(self.gwiazdki)

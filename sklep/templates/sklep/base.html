@@ -9,6 +9,11 @@
     <meta charset="utf-8" />
     <title>{% block title %}KAWA I HERBATA{% endblock %}</title>
     <link href='http://fonts.googleapis.com/css?family=Arbutus&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+         .checked {
+          color: orange;
+        }
+          </style>
     <link href="{% static "css/base.css" %}?version=3" rel="stylesheet" >
   </head>
   <body>
@@ -51,6 +56,9 @@
         <li> <a href="/o_nas">O Nas</a></li>
         <li> <a href="/kontakt">Kontakt</a></li> 
         <li><a href="/zwroty">Zwroty</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{%url 'zamowienia:wyswietl-zamowienia-uzytkownika' %}">Moje zamówienia</a></li>  
+        {% endif %}
       </ul>
       
         <div class="koszyk">

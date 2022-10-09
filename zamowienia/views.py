@@ -26,6 +26,17 @@ def is_social(request):
 def get_social_user(request):
     return SocialAccount.objects.filter(user=request.user)[0]
 
+def zamowienia_uzytkownika(request):
+    zalogowany_user=request.user
+    prefiks_strony="https://{}{}" if request.is_secure() else "http://{}{}"
+    zamowienia_uzytkownika=Zamowienie.objects.filter(uzytkownik=zalogowany_user)
+    return render(request,
+                  'zamowienia/lista.html',
+                  { 'uzytkownik':zalogowany_user,
+                    'zamowienia': zamowienia_uzytkownika})
+
+
+
 
 def utworz_zamowienie(request):
     koszyk = Koszyk(request)
@@ -37,8 +48,7 @@ def utworz_zamowienie(request):
     if (zalogowany_user.is_authenticated):
         zamowienie_goscia=False
         if (not is_social(request)): 
-            profil = UzytkownikProfil.objects.get(user=zalogowany_user)
-            init_data={"imie":  zalogowany_user.first_name, "nazwisko": zalogowany_user.last_name, "email": zalogowany_user.email, "adres":profil.adres, "kod_pocztowy":profil.kod_pocztowy, "miasto":profil.miasto }
+            init_data={"imie":  zalogowany_user.first_name, "nazwisko": zalogowany_user.last_name, "email": zalogowany_user.email }
         else:
             social_user=get_social_user(request)
             init_data={"imie":  zalogowany_user.first_name, "nazwisko": zalogowany_user.last_name, "email": social_user.extra_data['email'] }
@@ -95,6 +105,11 @@ def zamowienie_utworzone(id_zamowienia):
                           [zamowienie.email])
     return mail_sent
 
+def szczegoly_zamowienia(request, id_zamowienia):
+    zamowienie = get_object_or_404(Zamowienie, id=id_zamowienia)
+    return render(request,
+                  'zamowienia/zamowienie/szczegoly.html',
+                  {'zamowienie': zamowienie})
 
 
 @staff_member_required

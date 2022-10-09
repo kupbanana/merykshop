@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from koszyk.forms import FormularzDodajProduktDoKoszyka
 from django.contrib.auth.decorators import login_required
 from .models import Kategoria, Produkt
+from django.db.models import Avg
+from oceny.models import Ocena
 from django.contrib.auth import get_user_model, logout, login
 
 
@@ -86,6 +88,14 @@ def szczegoly_produktu(request, id, skrot_url, kategoria_skrot_url=None):
                                 id=id,
                                 skrot_url=skrot_url,
                                 dostepny=True)
+    oceny = Ocena.objects.filter(produkt__exact=id)
+    srednia_ocena = oceny.aggregate(Avg('gwiazdki'))['gwiazdki__avg']
+    if (not srednia_ocena is None):
+        srednia_ocena_calk= int(srednia_ocena + 0.5)
+        reszta = 5 - srednia_ocena_calk
+    else:
+        srednia_ocena_calk= 0
+        reszta = 5 - srednia_ocena_calk
     formularz_dodaj_do_koszyka = FormularzDodajProduktDoKoszyka()
 
     if kategoria_skrot_url:
@@ -96,4 +106,8 @@ def szczegoly_produktu(request, id, skrot_url, kategoria_skrot_url=None):
                   {'kategoria': kategoria,
                    'kategorie': kategorie, 
                    'produkt': produkt,
+                   'srednia_ocena':srednia_ocena,
+                   'srednia_ocena_calk':srednia_ocena_calk,
+                   'reszta':reszta,
+                   'liczba_ocen':oceny.count(),
                    'formularz_dodaj_do_koszyka': formularz_dodaj_do_koszyka})

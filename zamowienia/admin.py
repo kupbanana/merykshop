@@ -33,12 +33,12 @@ def export_to_csv(modeladmin, request, queryset):
             data_row.append(value)
         writer.writerow(data_row)
     return response
-export_to_csv.short_description = 'Export to CSV'
+export_to_csv.short_description = 'Eksport do CSV'
 
 
 def order_detail(obj):
     url = reverse('zamowienia:admin_order_detail', args=[obj.id])
-    return mark_safe(f'<a href="{url}">View</a>')
+    return mark_safe(f'<a href="{url}">Podgląd</a>')
 
 def order_pdf(obj):
     url = reverse('zamowienia:admin_order_pdf', args=[obj.id])

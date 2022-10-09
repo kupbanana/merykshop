@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import Ocena
 
-# Register your models here.
+
+@admin.register(Ocena)
+class OcenaAdmin(admin.ModelAdmin):
+    list_display = ['uzytkownik', 'produkt', 'gwiazdki']
+    list_filter = ['uzytkownik', 'produkt']
+    

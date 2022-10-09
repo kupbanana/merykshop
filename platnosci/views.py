@@ -58,6 +58,7 @@ def platnosc_zakonczona(order_id):
     """
     Wyślij e-mail po pomyślnej płatności.
     """
+   
     order = Zamowienie.objects.get(id=order_id)
 
     # stwórz e-maila z fakturą
@@ -68,7 +69,7 @@ def platnosc_zakonczona(order_id):
                          settings.EMAIL_DISPLAY_NAME,
                          [order.email])
     # wygeneruj PDF
-    html = render_to_string('zamowienia/zamowienie/pdf.html', {'order': order})
+    html = render_to_string('zamowienia/zamowienie/pdf.html', {'zamowienie': order})
     out = BytesIO()
     stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')]
     weasyprint.HTML(string=html).write_pdf(out,

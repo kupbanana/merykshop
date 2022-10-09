@@ -31,7 +31,7 @@ ACCOUNT_EMAIL_REQUIRED=True
 ALLOWED_HOSTS = ['localhost','meryk.pythonanywhere.com']
 
 
-# Application definition
+# Definicje aplikacji
 
 INSTALLED_APPS = [
     'django.contrib.auth',
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'oceny.apps.OcenyConfig',
     'platnosci.apps.PlatnoscConfig',
     'django_extensions',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -144,23 +144,20 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'koszyk'
-SESSION_ENGINE = "django.contrib.sessions.backends.cached_db" 
+SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'radmer123@gmail.com'
-DEFAULT_FROM_EMAIL = 'radmer123@gmail.com'
+EMAIL_HOST_USER = 'meryk154@gmail.com'
+DEFAULT_FROM_EMAIL = 'meryk154@gmail.com'
 EMAIL_DISPLAY_NAME = 'Sklep u Eweliny'
-EMAIL_HOST_PASSWORD = 'eahgyyxplutfzelq'
+EMAIL_HOST_PASSWORD = 'dxyaqfqjbpmodxeq'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-# Braintree settings
-BRAINTREE_MERCHANT_ID = 'tsgvrmsv366xj8km'  # Merchant ID
-BRAINTREE_PUBLIC_KEY = 'x3z2y5jxz3cp7jx3'   # Public Key
-BRAINTREE_PRIVATE_KEY = '534af2c6266a9ec5732fbc8e6dff2de6'  # Private key
 
-STRIPE_PUBLIC_KEY = 'pk_test_51LTKGpEZ5ZSlKLiWCJz5jvUDCxSP0wDyyFMqKa2W7l6O1Lzvc3LAOE1oDce7eBlo8bYVp7uQK3XFDKK0zjd1tnr600TTNUnIxl'
-STRIPE_PRIVATE_KEY='sk_test_51LTKGpEZ5ZSlKLiW0J4UvDvP47KnxMD7kazLmeZoH2vuyri73O2sDjNWjE8IAWPZBjtnla8Ha4izL6Cn249Ka3dJ00rZ28jaax'
+
+STRIPE_PUBLIC_KEY = 'pk_test_51LqWFLGOolVHF9OTJjiO2m5KiAzDVQJRlIARanM4UfVIfLbz4Yqgv4gSGUuezDpFSNIoJX1URstIn22C6HuOYH7C00BALtAD8p'
+STRIPE_PRIVATE_KEY='sk_test_51LqWFLGOolVHF9OTDD9zgIGnaH32ADSJSJWNnyxFOPtfGCKTnHLKv8Ux3BxCcjtrVrPIu2ZqLvsy4ru62JqhtmQR00oTytCXRW'
 STRIPE_SECRET_KEY=STRIPE_PRIVATE_KEY
 
 AUTHENTICATION_BACKENDS = (

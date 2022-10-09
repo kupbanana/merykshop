@@ -1,0 +1,10 @@
+{% extends "sklep/base.html" %}
+
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <p>Nie możesz dodać oceny produktu: {{produkt.nazwa}}, bo go nigdy nie zamawiałeś</p>
+</html>
+{% endblock %}

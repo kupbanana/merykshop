@@ -1,0 +1,11 @@
+{% extends "sklep/base.html" %}
+
+{% block title %}
+  Zamówienia użytkownika {{uzytkownik.first_name}} {{uzytkownik.last_name}}
+{% endblock %}
+
+{% block content %}
+{% for zamowienie in zamowienia %}
+    Zamówienie: {{zamowienie.id}} z dnia {{zamowienie.utworzone}} <a href = "{% url "zamowienia:szczegoly_zamowienia" zamowienie.id %}">Podgląd</a></br>
+{% endfor %} 
+{% endblock %}

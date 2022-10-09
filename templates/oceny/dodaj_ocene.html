@@ -1,0 +1,15 @@
+{% extends "sklep/base.html" %}
+
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <p>Oceń produkt: {{produkt.nazwa}}</p>
+  <form method="post" class="order-form">
+    {{ form.as_p }}
+    <input type="submit" value="Oceń">
+    {% csrf_token %}
+  </form> 
+</html>
+{% endblock %}

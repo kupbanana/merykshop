@@ -1,6 +1,7 @@
 {% extends "sklep/base.html" %}
 {% load static %}
 
+
 {% block title %}
   {{ produkt.nazwa }}
 {% endblock %}
@@ -30,6 +31,26 @@
                       Kategoria: {{ produkt.kategoria }}
                   </a>
                </h7>
+               {% if liczba_ocen > 0 %}
+                 <h7> 
+                    <p>Liczba ocen produktu: {{liczba_ocen}}</p>
+                    <p>Średnia ocena:({{srednia_ocena|floatformat:2 }})
+                    {% with ''|center:srednia_ocena_calk as range %}
+                    {% for _ in range %}
+                      {{'*'}}                      
+                    {% endfor %}
+                    {% endwith %}
+                    {% with ''|center:reszta as rrange %}
+                    {% for _ in rrange %}
+                      {{'-'}}                      
+                    {% endfor %}
+                    {% endwith %}
+                    </p>                                                           
+                 </h7> 
+               {% endif %}
+               <a href="{% url "oceny:dodaj-ocene" produkt.id %}" class="button">
+                Oceń produkt
+              </a>
                <p class="price">Cena: {{ produkt.cena }} zł</p>
                <form action="{% url "koszyk:koszyk_dodaj" produkt.id %}" method="post">
                   {{ formularz_dodaj_do_koszyka }}
@@ -43,6 +64,7 @@
                   {{ produkt.opis|linebreaks }}
                   </div>
              </div>
+            
          </div>
     </div>    
 {% endblock %}

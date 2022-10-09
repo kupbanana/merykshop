@@ -1,6 +1,5 @@
 from django.db import models
 from sklep.models import Produkt
-#from uzytkownicy.models import UzytkownikProfil
 from django.contrib.auth.models import User
 
 

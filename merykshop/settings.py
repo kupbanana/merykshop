@@ -31,7 +31,7 @@ ACCOUNT_EMAIL_REQUIRED=True
 ALLOWED_HOSTS = ['localhost','meryk.pythonanywhere.com']
 
 
-# Application definition
+# Definicje aplikacji
 
 INSTALLED_APPS = [
     'django.contrib.auth',

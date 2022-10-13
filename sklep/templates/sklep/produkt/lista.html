@@ -61,9 +61,9 @@
       <a class="a1" href="{{ produkt.get_absolute_url }}">{{ produkt.nazwa }}</a>
       <br>
       {{ produkt.cena }} zł
-      <h7><a href="{% url "koszyk:koszyk_dodaj_glowna" produkt.id %}" class="button">
+      <br><br><a href="{% url "koszyk:koszyk_dodaj_glowna" produkt.id %}" class="button">
         Dodaj do koszyka
-      </a></h7>
+      </a>
     </div>
   {% endfor %} 
   </div>

@@ -39,9 +39,9 @@
                     <p>Średnia ocena:({{srednia_ocena|floatformat:2 }})
                     {% with ''|center:srednia_ocena_calk as range %}
                     {% for _ in range %}              
-                    <ul>
+                    
                       <li class="gwiazdka">{{'⭐'}}</li>
-                    </ul>                     
+                            
                     {% endfor %}
                     {% endwith %}
                     {% with ''|center:reszta as rrange %}

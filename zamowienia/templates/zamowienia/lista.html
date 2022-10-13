@@ -6,6 +6,8 @@
 
 {% block content %}
 {% for zamowienie in zamowienia %}
-    Zamówienie: {{zamowienie.id}} z dnia {{zamowienie.utworzone}} <a href = "{% url "zamowienia:szczegoly_zamowienia" zamowienie.id %}">Podgląd</a></br>
-{% endfor %} 
+   <h2> Zamówienie: {{zamowienie.id}} z dnia {{zamowienie.utworzone}} <a href = "{% url "zamowienia:szczegoly_zamowienia" zamowienie.id %}">Podgląd</a></br></h2>
+  {% endfor %} 
+  <a href="{% url "sklep:lista_produktow" %}" class="button
+    light">Kontynuuj zakupy</a>
 {% endblock %}

@@ -8,12 +8,6 @@
   <head>
     <meta charset="utf-8" />
     <title>{% block title %}KAWA I HERBATA{% endblock %}</title>
-    <link href='http://fonts.googleapis.com/css?family=Arbutus&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <style>
-         .checked {
-          color: orange;
-        }
-          </style>
     <link href="{% static "css/base.css" %}?version=3" rel="stylesheet" >
   </head>
   <body>
@@ -44,7 +38,7 @@
                    <li><a href="{%url 'sklep:rejestracja' %}">Zarejestruj się</a></li>
                    </h7> </ul>
                  {% endif %}
-       <ul> <h13><p>Twoja kawa i herbata</p></h13> </ul>
+       <div><h13><p>Twoja kawa i herbata</p></h13> </div>
       </div>
 
     </div>

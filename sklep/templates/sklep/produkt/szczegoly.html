@@ -23,34 +23,36 @@
         </div>
         <div class="item">
             <div>
-                <h1>{{ produkt.nazwa }}</h1>
-                <img src="{% if produkt.zdjecie %}{{ produkt.zdjecie.url}}" width="150" height="150" 
-                {% else %}{% static "img/no_image.png" width="150" height="150" %}{% endif %}">
+              <p class="price">{{ produkt.nazwa }}</p>  
+              <div class="img">
+                <img src="{% if produkt.zdjecie %}{{ produkt.zdjecie.url}}" width="300" height="300" 
+                {% else %}{% static "img/no_image.png" width="300" height="300" %}{% endif %}">
+              </div>
                 <h7>
                   <a href="{{ produkt.kategoria.get_absolute_url }}">
                       Kategoria: {{ produkt.kategoria }}
                   </a>
                </h7>
-               {% if liczba_ocen > 0 %}
-                 <h7> 
+               <br></br>
+               {% if liczba_ocen > 0 %}                
                     <p>Liczba ocen produktu: {{liczba_ocen}}</p>
                     <p>Średnia ocena:({{srednia_ocena|floatformat:2 }})
                     {% with ''|center:srednia_ocena_calk as range %}
-                    {% for _ in range %}
-                      {{'*'}}                      
+                    {% for _ in range %}              
+                    <ul>
+                      <li class="gwiazdka">{{'⭐'}}</li>
+                    </ul>                     
                     {% endfor %}
                     {% endwith %}
                     {% with ''|center:reszta as rrange %}
                     {% for _ in rrange %}
-                      {{'-'}}                      
+                      {{'✩'}}                      
                     {% endfor %}
-                    {% endwith %}
-                    </p>                                                           
-                 </h7> 
+                    {% endwith %}                                                           
                {% endif %}
-               <a href="{% url "oceny:dodaj-ocene" produkt.id %}" class="button">
+               <h7><a href="{% url "oceny:dodaj-ocene" produkt.id %}" class="button">
                 Oceń produkt
-              </a>
+              </a></h7>
                <p class="price">Cena: {{ produkt.cena }} zł</p>
                <form action="{% url "koszyk:koszyk_dodaj" produkt.id %}" method="post">
                   {{ formularz_dodaj_do_koszyka }}

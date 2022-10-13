@@ -17,6 +17,14 @@ def koszyk_dodaj(request, produkt_id):
                  nadpisz_ilosc=cd['nadpisz'])
     return redirect('koszyk:koszyk_szczegoly')
 
+def koszyk_dodaj_glowna(request, produkt_id):
+    koszyk = Koszyk(request)
+    produkt = get_object_or_404(Produkt, id=produkt_id)
+    koszyk.dodaj(produkt=produkt,
+            ilosc=1,
+            nadpisz_ilosc=False)
+    return redirect('koszyk:koszyk_szczegoly')
+
 
 @require_POST
 def koszyk_usun(request, produkt_id):

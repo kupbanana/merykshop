@@ -30,7 +30,7 @@
             </td>
             <td>{{ produkt.nazwa }}</td>
             <td>
-              <form action="{% url "koszyk:koszyk_dodaj" produkt.id %}" method="post">
+              <form action="{% url "koszyk:koszyk_dodaj" produkt_id=produkt.id skad='koszyk' %}" method="post">
                 {{ towar.uaktualnij_formularz_ilosc.ilosc }}
                 {{ towar.uaktualnij_formularz_ilosc.nadpisz }}
                 <input type="submit" value="Uaktualnij">

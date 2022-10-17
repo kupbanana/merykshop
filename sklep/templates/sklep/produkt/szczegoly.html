@@ -54,7 +54,7 @@
                 Oceń produkt
               </a></h7>
                <p class="price">Cena: {{ produkt.cena }} zł</p>
-               <form action="{% url "koszyk:koszyk_dodaj" produkt.id %}" method="post">
+               <form action="{% url "koszyk:koszyk_dodaj" produkt_id=produkt.id skad='glowna' %}" method="post">
                   {{ formularz_dodaj_do_koszyka }}
                   {% csrf_token %}
                   <input type="submit" value="Dodaj do koszyka">

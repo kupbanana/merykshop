@@ -9,7 +9,7 @@ body {
     margin:0;
     padding:0;
     height:100%;
-}
+    
 
 p
 {
@@ -301,6 +301,7 @@ li a:hover{
    background-color: #f2f2f2;
    padding: 18px;
    box-shadow: 0px 0px 10px #000;
+   background: repeating-radial-gradient(#cbc6bb, #0057d900 3.555px);
 }
 
 .lista-produktow .item img {
@@ -334,7 +335,7 @@ img {
  .szczegoly-produktu .item .img {
     margin-right: 5%;
     float: left;
-    width: 64%;   
+  
 }
 
 .szczegoly-produktu .price {
@@ -504,7 +505,6 @@ button
     margin-left: 15%;
 }
  .footer {
-    margin-top: 10%;
     background-color:
     grey;
     text-align: center;

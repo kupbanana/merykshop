@@ -5,13 +5,15 @@ html {
 
 }
 body { 
+    display: grid;
     margin:0;
     padding:0;
     height:100%;
 }
-:hover
+
+p
 {
-    font-size:150%;
+margin-left:5%;
 }
 .a1
 {
@@ -150,6 +152,7 @@ tbody td.num {
 td input[type="submit"] {
     font-size:12px;
     padding:4px 10px;
+
 }
 
 form p label, form p input {
@@ -191,11 +194,8 @@ ul.errorlist {
     overflow:auto;
 }
 
-#subheader {
-             overflow:auto;
-            }
-
 ul {
+    text-align: center;
     width: 100%;
     padding: inherit;
     margin: 0;
@@ -295,6 +295,7 @@ li a:hover{
 }
 
 .lista-produktow .item {
+   display: inline-table;
    background-color: #f2f2f2;
    padding: 18px;
    box-shadow: 0px 0px 10px #000;
@@ -329,6 +330,7 @@ img {
  }
 
  .szczegoly-produktu .item .img {
+    margin-right: 5%;
     float:left;
     width:250px;
     vertical-align: middle;
@@ -372,10 +374,6 @@ img {
 .szczegoly-produktu h2 {
     margin-top:10px;
 }
-
-/* formularz zamówienia
-
-*/
 
 .order-form {
     padding:0px 70px ;
@@ -502,6 +500,7 @@ button
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+    margin-left: 15%;
 }
  .footer {
     background-color:
@@ -521,7 +520,7 @@ p.text-right
 }
 form.login
 {
-    text-align: center;
+    margin-left:18%;
 }
 li.gwiazdka
 {

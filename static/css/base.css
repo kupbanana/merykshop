@@ -37,12 +37,6 @@ a{
     color:rgb(8, 8, 223);
     font-size: small;
 }
-a.podpis
-{
-    text-align: center;
-    font-family: "Lucida Console", "Courier New", monospace; 
-    color:#000;
-}
 
 
 h1, h2, h3, h4, h5 , h6 { 

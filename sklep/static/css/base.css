@@ -9,6 +9,7 @@ body {
     margin:0;
     padding:0;
     height:100%;
+   
 }
 
 p
@@ -293,6 +294,7 @@ li a:hover{
    width: 80%;
    margin: 0 auto;
    grid-template-columns: auto auto auto ;
+   background: repeating-radial-gradient(#cbc6bb, #0057d900 3.555px);
 
 }
 
@@ -334,7 +336,6 @@ img {
  .szczegoly-produktu .item .img {
     margin-right: 5%;
     float: left;
-    width: 64%;   
 }
 
 .szczegoly-produktu .price {

@@ -5,7 +5,7 @@ html {
 
 }
 body { 
-    display: grid;
+    display: flow-root;
     margin:0;
     padding:0;
     height:100%;
@@ -36,13 +36,13 @@ h7.zaliwyl
 
 a{
     text-decoration: none;
-    color:rgb(8, 8, 223);
+    color: #8f4800;
     font-size: small;
 }
 
 
 h1, h2, h3, h4, h5 , h6 { 
-    font-family: 'Bookman, URW Bookman L', serif
+    display: inline-block;
     font-weight: normal;
     text-align: center;
 }
@@ -95,13 +95,16 @@ a:hover {
 }
 
 a.button, input[type="submit"] {
-    color:#fff;
-    background:#9f2828;
+    color: #fff;
+    background: rgb(120 159 120);
     border-radius: 10px;
-    padding: 10px 10px;
-    font-size:14px;
-    border:0;
-    /* margin: initial; */
+    padding: 2%;
+    font-size: revert;
+    border: 0;
+    font-family: cursive;
+    display: list-item;
+    margin-left: 35%;
+
 }
 
 a.button.light {
@@ -165,8 +168,6 @@ form p label {
 }
 
 form p input {
-  
-    width:160px;
     font-size:13px;
     margin-bottom:10px;
     border:0;
@@ -177,6 +178,7 @@ form p input {
 
 .socialaccount_ballot
 {
+    margin-left: 20%;
     float: left;
 }
 ul.errorlist {
@@ -206,7 +208,6 @@ ul {
 li a {
     float: left;
     text-align: center;
-    font-family: Arial, sans-serif;
     font-size:medium;
     width:160px;
     text-decoration: none;
@@ -245,9 +246,10 @@ li a:hover{
 }
 
  #sidebar {
-        float: left;
-        height:100%;
-        padding:30px 20px 0 0;
+    border-radius: 20%;
+    float: left;
+    padding: 30px 20px 0 0;
+    box-shadow: 0px 0px 15px #000;
     }
 
 #sidebar ul{
@@ -307,7 +309,7 @@ li a:hover{
 }
 
 img {
-    size: revert;
+    size: small;
 }
 
 /* ------------------------------------------------ SZCZEGÓŁY PRODUKTU ---------------------------------------------------
@@ -331,10 +333,8 @@ img {
 
  .szczegoly-produktu .item .img {
     margin-right: 5%;
-    float:left;
-    width:250px;
-    vertical-align: middle;
-    height:100%;    
+    float: left;
+    width: 64%;   
 }
 
 .szczegoly-produktu .price {
@@ -356,14 +356,14 @@ img {
 }
 
 .opis-produktu {
-    border-radius: 1%;
+    border-radius: 34%;
     text-align:justify;   
-    height:auto;
     margin-right: 24px;
     box-shadow: 0px 0px 10px #000;
 }
 
 .opis-produktu > div {
+    margin: 10%;
     padding: 20px;
 }
 .opis-produktu-tytul {
@@ -491,6 +491,7 @@ h13
 }
 button
 {
+    border-radius: 132%;
     background-color:blue; 
     border: none;
     color: white;
@@ -503,6 +504,7 @@ button
     margin-left: 15%;
 }
  .footer {
+    margin-top: 10%;
     background-color:
     grey;
     text-align: center;
@@ -516,7 +518,10 @@ p.text-right
 }
 #content
 {
-    /* text-align: center; */
+    display: block;
+    text-align: center;
+    margin-top: 5%;
+
 }
 form.login
 {
@@ -526,6 +531,6 @@ li.gwiazdka
 {
     list-style: none;
     color:gold;
-    float: left;
+    display: inline-block;
     padding: 0.5%;
 }

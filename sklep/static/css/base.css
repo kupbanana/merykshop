@@ -294,7 +294,6 @@ li a:hover{
    width: 80%;
    margin: 0 auto;
    grid-template-columns: auto auto auto ;
-   background: repeating-radial-gradient(#cbc6bb, #0057d900 3.555px);
 
 }
 

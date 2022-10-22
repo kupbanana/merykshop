@@ -40,10 +40,14 @@ a{
     color: #8f4800;
     font-size: small;
 }
+h1
+{
+   font-weight: normal;
+    text-align: center;  
+}
 
-
-h1, h2, h3, h4, h5 , h6 { 
-    display: inline-block;
+h2, h3, h4, h5 , h6 { 
+    margin-top: 9%;
     font-weight: normal;
     text-align: center;
 }
@@ -103,8 +107,6 @@ a.button, input[type="submit"] {
     font-size: revert;
     border: 0;
     font-family: cursive;
-    display: list-item;
-    margin-left: 35%;
 
 }
 
@@ -322,7 +324,7 @@ img {
 .szczegoly-produktu {
     display: grid;
     grid-template-columns: 220px 1fr;
-    grid-gap: 3em;
+    grid-gap: 9em;
     margin: 0 auto;
 }
 
@@ -338,9 +340,10 @@ img {
 }
 
 .szczegoly-produktu .price {
-    color:#333;
-    font-size:28px;
-    font-weight:bold;
+    color: #333;
+    font-size: 170%;
+    font-weight: bold;
+    display: table;
 }
 
 .szczegoly-produktu .label {
@@ -358,17 +361,16 @@ img {
 .opis-produktu {
     border-radius: 34%;
     text-align:justify;   
-    margin-right: 24px;
     box-shadow: 0px 0px 10px #000;
 }
 
 .opis-produktu > div {
-    margin: 10%;
+    
     padding: 20px;
 }
 .opis-produktu-tytul {
-    margin: 12px;
-    font-size: 28px;
+    display: -webkit-box;
+    font-size: 14px;
     font-weight: bold;
 }
 .szczegoly-produktu h2 {
@@ -498,7 +500,7 @@ button
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
     font-size: 16px;
     cursor: pointer;
     margin-left: 15%;

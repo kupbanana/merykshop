@@ -84,3 +84,6 @@ class Koszyk(object):
 
     def oblicz_laczna_cene(self):
         return sum(Decimal(towar['cena']) * towar['ilosc'] for towar in self.koszyk.values())
+
+    def jestpusty(self):
+        return self.__len__()<=0

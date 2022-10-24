@@ -59,9 +59,11 @@
   <p class="text-right">
     <a href="{% url "sklep:lista_produktow" %}" class="button
     light">Kontynuuj zakupy</a>
+    {%if not koszyk.jestpusty %}
     <a href="{% url "zamowienia:utworz_zamowienie" %}" class="button">
       Do kasy
     </a>
+    {% endif %}
   </p>
 
 </body>

@@ -1,0 +1,7 @@
+django 
+weasyprint
+stripe
+django-allauth
+django-extensions
+Werkzeug
+pyopenssl
